@@ -48,6 +48,13 @@ func ResourceWifiChannel() *schema.Resource {
 			Description: "Channel frequency value or range in MHz on which AP or station will operate.",
 		},
 		KeyName: PropName("Name of the channel."),
+		"preamble_puncturing": {
+			Type:     schema.TypeBool,
+			Optional: true,
+			Description: "Whether to puncture (skip) the 20 MHz subchannels of a wide channel that are busy or affected " +
+				"by radar, instead of narrowing the whole channel. Applies to 802.11be only.",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
 		"reselect_interval": {
 			Type:             schema.TypeString,
 			Optional:         true,

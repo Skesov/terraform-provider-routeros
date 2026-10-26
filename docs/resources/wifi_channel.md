@@ -27,6 +27,7 @@ resource "routeros_wifi_channel" "channel1" {
 - `deprioritize_unii_3_4` (Boolean) Whether to assign lower priority to channels with a control frequency of 5720 or 5825-5885 MHz. These channels are unsupported by some client devices, making their automatic selection undesirable. Defaults to `yes` in ETSI regulatory domains, elsewhere to `no`.
 - `disabled` (Boolean)
 - `frequency` (List of String) Channel frequency value or range in MHz on which AP or station will operate.
+- `preamble_puncturing` (Boolean) Whether to puncture (skip) the 20 MHz subchannels of a wide channel that are busy or affected by radar, instead of narrowing the whole channel. Applies to 802.11be only.
 - `reselect_interval` (String) An option that specifies when the interface should rescan channel availability and select the most appropriate one to use.
 - `reselect_time` (String) Specifies the clock time when the interface should run "rescan channel availability" and select the most appropriate one to use. Specifying the clock time will allow the system to select this time dynamically and randomly. This helps to avoid a situation when many APs at the same time scan the network, select the same channel, and prefer to use it at the same time. reselect-time uses a background scan. 
 The reselect process will choose the most suitable channel considering the number of networks in the channel, channel usage, and overlap with networks in adjacent channels. It can be used with a list of frequencies defined, or with frequency not set - using all supported frequencies.

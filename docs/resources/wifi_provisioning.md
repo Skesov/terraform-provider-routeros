@@ -31,6 +31,7 @@ resource "routeros_wifi_provisioning" "provisioning1" {
 - `disabled` (Boolean)
 - `identity_regexp` (String) Regular expression to match radios by router identity.
 - `master_configuration` (String) If action specifies to create interfaces, then a new master interface with its configuration set to this configuration profile will be created.
+- `multi_link_mode` (String) Multi-Link Operation (802.11be MLO) mode of the interfaces this rule creates: `auto`, `disabled`, `master` or `all`.
 - `name_format` (String) Specify the format of the CAP interface name creation.
 - `radio_mac` (String) MAC address of radio to be matched, empty MAC means match all MAC addresses. `00:00:00:00:00:00` is not considered empty MAC-address.
 - `slave_configurations` (List of String) If action specifies to create interfaces, then a new slave interface for each configuration profile in this list is created.

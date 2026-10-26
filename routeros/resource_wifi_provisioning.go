@@ -59,6 +59,14 @@ func ResourceWifiProvisioning() *schema.Resource {
 			Description: "If action specifies to create interfaces, then a new master interface with its configuration " +
 				"set to this configuration profile will be created.",
 		},
+		"multi_link_mode": {
+			Type:     schema.TypeString,
+			Optional: true,
+			Description: "Multi-Link Operation (802.11be MLO) mode of the interfaces this rule creates: `auto`, `disabled`, " +
+				"`master` or `all`.",
+			ValidateFunc:     validation.StringInSlice([]string{"auto", "disabled", "master", "all"}, false),
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
 		"name_format": {
 			Type:        schema.TypeString,
 			Optional:    true,
