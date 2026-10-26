@@ -19,6 +19,7 @@ resource "routeros_interface_ethernet_switch_port" "test" {
 ### Optional
 
 - `default_vlan_id` (String) Adds a VLAN tag with the specified VLAN ID on all untagged ingress traffic on a port, should be used with ```vlan-header``` set to ```always-strip``` on a port to configure the port to be the access port. For hybrid ports ```default-vlan-id``` is used to tag untagged traffic. If two ports have the same ```default-vlan-id```, then VLAN tag is not added since the switch chip assumes that traffic is being forwarded between access ports.
+- `l3_hw_offloading` (Boolean) Level 3 hardware offloading
 - `limit_broadcasts` (Boolean) Restrict broadcast traffic on the port to `storm-rate`. Only available on CRS Prestera switch chips.
 - `limit_unknown_multicasts` (Boolean) Restrict unknown multicast traffic on the port to `storm-rate`. Only available on CRS Prestera switch chips.
 - `limit_unknown_unicasts` (Boolean) Restrict unknown unicast traffic on the port to `storm-rate`. Only available on CRS Prestera switch chips.
