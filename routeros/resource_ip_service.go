@@ -138,6 +138,16 @@ func ResourceIpService() *schema.Resource {
 	resCreateUpdate := func(ctx context.Context, d *schema.ResourceData, m interface{}) diag.Diagnostics {
 		item, metadata := TerraformResourceDataToMikrotik(resSchema, d)
 
+		// Resolve the static (non-dynamic) row's `.id` before SET and address
+		// the row by it. Dynamic per-connection rows duplicate the service
+		// `name`, so `numbers=<name>` is not a unique selector on 7.20+.
+		// Subsequent Read/Update/Delete operate on the same `.id`.
+		id, err := resolveIpServiceId(d.Get("numbers").(string), m.(Client))
+		if err != nil {
+			return diag.FromErr(err)
+		}
+		item["numbers"] = id
+
 		var resUrl string
 		if m.(Client).GetTransport() == TransportREST {
 			// https://router/rest/system/identity/set
@@ -145,19 +155,11 @@ func ResourceIpService() *schema.Resource {
 			resUrl = "/set"
 		}
 
-		err := m.(Client).SendRequest(crudPost, &URL{Path: metadata.Path + resUrl}, item, nil)
+		err = m.(Client).SendRequest(crudPost, &URL{Path: metadata.Path + resUrl}, item, nil)
 		if err != nil {
 			return diag.FromErr(err)
 		}
 
-		// After SET, resolve the static (non-dynamic) row's `.id` and store
-		// it as the resource id. Subsequent Read/Update/Delete then operate
-		// on `.id`, which is unique even when dynamic per-connection rows
-		// duplicate the service `name`.
-		id, err := resolveIpServiceId(d.Get("numbers").(string), m.(Client))
-		if err != nil {
-			return diag.FromErr(err)
-		}
 		d.SetId(id)
 
 		return resourceIpServiceRead(ctx, resSchema, d, m)
@@ -165,7 +167,7 @@ func ResourceIpService() *schema.Resource {
 
 	return &schema.Resource{
 		CreateContext: resCreateUpdate,
-		ReadContext:   func(ctx context.Context, d *schema.ResourceData, m interface{}) diag.Diagnostics {
+		ReadContext: func(ctx context.Context, d *schema.ResourceData, m interface{}) diag.Diagnostics {
 			return resourceIpServiceRead(ctx, resSchema, d, m)
 		},
 		UpdateContext: resCreateUpdate,
@@ -182,6 +184,16 @@ func ResourceIpService() *schema.Resource {
 // resourceIpServiceRead Read filtered to the static (non-dynamic) row only,
 // keyed by the resource's `.id` set during create/import.
 func resourceIpServiceRead(ctx context.Context, s map[string]*schema.Schema, d *schema.ResourceData, m interface{}) diag.Diagnostics {
+	// State written by earlier provider versions keys the resource by the
+	// service name; translate it to the row's `.id`.
+	if id := d.Id(); id != "" && id[0] != '*' {
+		resolved, err := resolveIpServiceId(id, m.(Client))
+		if err != nil {
+			return diag.FromErr(err)
+		}
+		d.SetId(resolved)
+	}
+
 	res, err := ReadItemsFiltered(
 		[]string{".id=" + d.Id(), "dynamic=false"},
 		"/ip/service", m.(Client),
@@ -196,6 +208,11 @@ func resourceIpServiceRead(ctx context.Context, s map[string]*schema.Schema, d *
 	}
 	if id, ok := (*res)[0][".id"]; ok {
 		d.SetId(id)
+	}
+	// `numbers` is the service name in configuration; fill it from the row so
+	// that an imported resource plans clean.
+	if err := d.Set("numbers", (*res)[0]["name"]); err != nil {
+		return diag.FromErr(err)
 	}
 	return MikrotikResourceDataToTerraform((*res)[0], s, d)
 }
