@@ -1,3 +1,5 @@
+> **AI-maintained personal fork** of [terraform-routeros/terraform-provider-routeros](https://github.com/terraform-routeros/terraform-provider-routeros) for the owner's home routers. Changes are written by an AI agent. Not supported; use at your own risk. See [FORK.md](FORK.md).
+
 # Terraform Provider RouterOS
 
 ![module testing workflow](https://github.com/GNewbury1/terraform-provider-routeros/actions/workflows/release.yml/badge.svg?branch=main)
