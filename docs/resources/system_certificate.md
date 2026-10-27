@@ -115,6 +115,7 @@ EOT
 - `copy_from` (String)
 - `country` (String) Country Name (2 letter code).
 - `days_valid` (Number) Certificate lifetime.
+- `digest_algorithm` (String) Digest algorithm used to sign the certificate.
 - `import` (Block Set, Max: 1) (see [below for nested schema](#nestedblock--import))
 - `key_size` (String)
 - `key_usage` (Set of String) Detailed key usage descriptions can be found in RFC 5280.
@@ -137,7 +138,6 @@ EOT
 - `ca_fingerprint` (String)
 - `challenge_password` (String, Sensitive) A challenge password for scep client.
 - `crl` (String)
-- `digest_algorithm` (Boolean)
 - `dsa` (Boolean)
 - `expired` (Boolean) Set to true if certificate is expired.
 - `expires_after` (String)

@@ -108,8 +108,12 @@ func ResourceSystemCertificate() *schema.Resource {
 			Computed: true,
 		},
 		"digest_algorithm": {
-			Type:     schema.TypeBool,
-			Computed: true,
+			Type:         schema.TypeString,
+			Optional:     true,
+			Computed:     true,
+			ForceNew:     true,
+			Description:  "Digest algorithm used to sign the certificate.",
+			ValidateFunc: validation.StringInSlice([]string{"md5", "sha1", "sha256", "sha384", "sha512"}, false),
 		},
 		"expired": {
 			Type:        schema.TypeBool,
