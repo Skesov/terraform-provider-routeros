@@ -401,7 +401,11 @@ func runDump(url, out string) error {
 	}
 	sort.Strings(keys)
 	fmt.Fprintf(os.Stderr, "%s %s: %d menus -> %s\n", d.Board, d.Version, len(keys), out)
-	return os.WriteFile(out, append(b, '\n'), 0o644)
+	if err := os.WriteFile(out, append(b, '\n'), 0o644); err != nil {
+		return err
+	}
+	fmt.Println(out)
+	return nil
 }
 
 func boardSlug(b string) string {

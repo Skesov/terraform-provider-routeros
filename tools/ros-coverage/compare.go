@@ -18,6 +18,10 @@ var otherHardware = map[string]string{
 	"routeros_interface_ethernet_switch_crs_vlan": "CRS1xx/2xx switch chips",
 }
 
+// Schema fields that map to command arguments, not properties; the dump
+// leaves those arguments out.
+var commandFields = map[string]bool{"place_before": true, "numbers": true, "copy_from": true}
+
 type result struct {
 	Path, Kind, Resource                       string
 	Static                                     int
@@ -121,7 +125,7 @@ func compareMenu(path string, m *Menu, name string, s map[string]*schema.Schema,
 	}
 
 	for field, f := range s {
-		if strings.HasPrefix(field, "___") || seen[field] {
+		if strings.HasPrefix(field, "___") || seen[field] || commandFields[field] {
 			continue
 		}
 		p := routeros.CoverageProperty(s, ros, field)

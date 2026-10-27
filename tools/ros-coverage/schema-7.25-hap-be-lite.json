@@ -49,7 +49,7 @@
      ]
     },
     "trust-store": {
-     "syntax": "TrustStore: All | Component; Component: ipsec|wpa-eap|capsman|fetch|sstp|ovpn|mqtt|email|netwatch|radius|container|userman|lora|wiliot|openflow|tr069|dot1x|dns|\u003cname\u003e|\u003cname\u003e|\u003cname\u003e|logging[,Component*]"
+     "syntax": "TrustStore: All | Component; Component: ipsec|wpa-eap|capsman|fetch|sstp|ovpn|mqtt|email|netwatch|radius|container|userman|lora|wiliot|openflow|tr069|dot1x|dns|<name>|<name>|<name>|logging[,Component*]"
     },
     "trusted": {
      "values": [
@@ -103,7 +103,7 @@
      ]
     },
     "trust-store": {
-     "syntax": "TrustStore: All | Component; Component: ipsec|wpa-eap|capsman|fetch|sstp|ovpn|mqtt|email|netwatch|radius|container|userman|lora|wiliot|openflow|tr069|dot1x|dns|\u003cname\u003e|\u003cname\u003e|\u003cname\u003e|logging[,Component*]"
+     "syntax": "TrustStore: All | Component; Component: ipsec|wpa-eap|capsman|fetch|sstp|ovpn|mqtt|email|netwatch|radius|container|userman|lora|wiliot|openflow|tr069|dot1x|dns|<name>|<name>|<name>|logging[,Component*]"
     },
     "trusted": {
      "values": [
@@ -266,7 +266,7 @@
    "set": {
     "builtin-trust-store": {
      "description": "RouterOS provided CA certificates",
-     "syntax": "BuiltinTrustStore: AllNone | Component; Component: ipsec|wpa-eap|capsman|fetch|sstp|ovpn|mqtt|email|netwatch|radius|container|userman|lora|wiliot|openflow|tr069|dot1x|dns|\u003cname\u003e|\u003cname\u003e|\u003cname\u003e|logging[,Component*]"
+     "syntax": "BuiltinTrustStore: AllNone | Component; Component: ipsec|wpa-eap|capsman|fetch|sstp|ovpn|mqtt|email|netwatch|radius|container|userman|lora|wiliot|openflow|tr069|dot1x|dns|<name>|<name>|<name>|logging[,Component*]"
     },
     "crl-download": {
      "description": "auto CRL download and update",
@@ -290,7 +290,7 @@
      ]
     },
     "current-defaults": {
-     "syntax": "CurrentDefaults: ipsec|wpa-eap|capsman|fetch|sstp|ovpn|mqtt|email|netwatch|radius|container|userman|lora|wiliot|openflow|tr069|dot1x|dns|\u003cname\u003e|\u003cname\u003e|\u003cname\u003e|logging[,CurrentDefaults*]"
+     "syntax": "CurrentDefaults: ipsec|wpa-eap|capsman|fetch|sstp|ovpn|mqtt|email|netwatch|radius|container|userman|lora|wiliot|openflow|tr069|dot1x|dns|<name>|<name>|<name>|logging[,CurrentDefaults*]"
     }
    },
    "print": {
@@ -1575,7 +1575,7 @@
     },
     "ip-protocol": {
      "description": "IP protocol name",
-     "syntax": "IpProtocol: [!]Protocol; Protocol: IpProtocol; IpProtocol: \u003cname\u003e | ddp | egp | encap | etherip | ..."
+     "syntax": "IpProtocol: [!]Protocol; Protocol: IpProtocol; IpProtocol: <name> | ddp | egp | encap | etherip | ..."
     },
     "limit": {
      "description": "Restricts packet match rate to a given limit",
@@ -1803,7 +1803,7 @@
     },
     "ip-protocol": {
      "description": "IP protocol name",
-     "syntax": "IpProtocol: [!]Protocol; Protocol: IpProtocol; IpProtocol: \u003cname\u003e | ddp | egp | encap | etherip | ..."
+     "syntax": "IpProtocol: [!]Protocol; Protocol: IpProtocol; IpProtocol: <name> | ddp | egp | encap | etherip | ..."
     },
     "limit": {
      "description": "Restricts packet match rate to a given limit",
@@ -2035,7 +2035,7 @@
     },
     "ip-protocol": {
      "description": "IP protocol name",
-     "syntax": "IpProtocol: [!]Protocol; Protocol: IpProtocol; IpProtocol: \u003cname\u003e | ddp | egp | encap | etherip | ..."
+     "syntax": "IpProtocol: [!]Protocol; Protocol: IpProtocol; IpProtocol: <name> | ddp | egp | encap | etherip | ..."
     },
     "jump-target": {
      "description": "if action=jump, then jump destination should be set here"
@@ -2274,7 +2274,7 @@
     },
     "ip-protocol": {
      "description": "IP protocol name",
-     "syntax": "IpProtocol: [!]Protocol; Protocol: IpProtocol; IpProtocol: \u003cname\u003e | ddp | egp | encap | etherip | ..."
+     "syntax": "IpProtocol: [!]Protocol; Protocol: IpProtocol; IpProtocol: <name> | ddp | egp | encap | etherip | ..."
     },
     "jump-target": {
      "description": "if action=jump, then jump destination should be set here"
@@ -2470,7 +2470,7 @@
     "mac-address": "string",
     "on-interface": "string"
    },
-   "rows": 16
+   "rows": 17
   },
   "/interface/bridge/mdb": {
    "kind": "list",
@@ -2669,7 +2669,7 @@
     },
     "ip-protocol": {
      "description": "IP protocol name",
-     "syntax": "IpProtocol: [!]Protocol; Protocol: IpProtocol; IpProtocol: \u003cname\u003e | ddp | egp | encap | etherip | ..."
+     "syntax": "IpProtocol: [!]Protocol; Protocol: IpProtocol; IpProtocol: <name> | ddp | egp | encap | etherip | ..."
     },
     "jump-target": {
      "description": "if action=jump, then jump destination should be set here"
@@ -2924,7 +2924,7 @@
     },
     "ip-protocol": {
      "description": "IP protocol name",
-     "syntax": "IpProtocol: [!]Protocol; Protocol: IpProtocol; IpProtocol: \u003cname\u003e | ddp | egp | encap | etherip | ..."
+     "syntax": "IpProtocol: [!]Protocol; Protocol: IpProtocol; IpProtocol: <name> | ddp | egp | encap | etherip | ..."
     },
     "jump-target": {
      "description": "if action=jump, then jump destination should be set here"
@@ -3146,7 +3146,7 @@
     },
     "interface": {
      "description": "Name of the interface",
-     "syntax": "Interface: Interface | InterfaceList; Interface: BridgeIface; BridgeIface: \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | ..."
+     "syntax": "Interface: Interface | InterfaceList; Interface: BridgeIface; BridgeIface: <name> | <name> | <name> | <name> | <name> | ..."
     },
     "internal-path-cost": {
      "syntax": "InternalPathCost: Num; Num: 1..200000000    (integer number)"
@@ -3336,7 +3336,7 @@
     },
     "interface": {
      "description": "Name of the interface",
-     "syntax": "Interface: Interface | InterfaceList; Interface: BridgeIface; BridgeIface: \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | ..."
+     "syntax": "Interface: Interface | InterfaceList; Interface: BridgeIface; BridgeIface: <name> | <name> | <name> | <name> | <name> | ..."
     },
     "internal-path-cost": {
      "syntax": "InternalPathCost: Num; Num: 1..200000000    (integer number)"
@@ -3957,7 +3957,7 @@
     },
     "remote-address": {
      "description": "Remote address of tunnel",
-     "syntax": "Address: IPv4 | Hostname; VRF: \u003cname\u003e"
+     "syntax": "Address: IPv4 | Hostname; VRF: <name>"
     },
     "tunnel-id": {
      "description": "Tunnel identity",
@@ -4045,7 +4045,7 @@
     },
     "remote-address": {
      "description": "Remote address of tunnel",
-     "syntax": "Address: IPv4 | Hostname; VRF: \u003cname\u003e"
+     "syntax": "Address: IPv4 | Hostname; VRF: <name>"
     },
     "tunnel-id": {
      "description": "Tunnel identity",
@@ -4128,7 +4128,7 @@
      "description": "Interface name"
     },
     "remote-address": {
-     "syntax": "Address: IPv6 | Hostname | Interface; Interface: \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | ...; Interface: \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | ...; VRF: \u003cname\u003e"
+     "syntax": "Address: IPv6 | Hostname | Interface; Interface: <name> | <name> | <name> | <name> | <name> | ...; Interface: <name> | <name> | <name> | <name> | <name> | ...; VRF: <name>"
     },
     "tunnel-id": {
      "syntax": "TunnelId: Num; Num: 0..4095    (integer number)"
@@ -4207,7 +4207,7 @@
      "description": "Interface name"
     },
     "remote-address": {
-     "syntax": "Address: IPv6 | Hostname | Interface; Interface: \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | ...; Interface: \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | ...; VRF: \u003cname\u003e"
+     "syntax": "Address: IPv6 | Hostname | Interface; Interface: <name> | <name> | <name> | <name> | <name> | ...; Interface: <name> | <name> | <name> | <name> | <name> | ...; VRF: <name>"
     },
     "tunnel-id": {
      "syntax": "TunnelId: Num; Num: 0..4095    (integer number)"
@@ -4608,7 +4608,7 @@
     },
     "ports": {},
     "protocol": {
-     "syntax": "Protocol: ProtocolName | ProtocolNumber; ProtocolName: IpProtocol; IpProtocol: \u003cname\u003e | ddp | egp | encap | etherip | ...; ProtocolNumber: Num; Num: 0..255    (integer number)"
+     "syntax": "Protocol: ProtocolName | ProtocolNumber; ProtocolName: IpProtocol; IpProtocol: <name> | ddp | egp | encap | etherip | ...; ProtocolNumber: Num; Num: 0..255    (integer number)"
     },
     "rate": {
      "syntax": "Rate: Num[bps]; Num: 0..18446744073709551615    (integer number)"
@@ -4704,7 +4704,7 @@
     },
     "ports": {},
     "protocol": {
-     "syntax": "Protocol: ProtocolName | ProtocolNumber; ProtocolName: IpProtocol; IpProtocol: \u003cname\u003e | ddp | egp | encap | etherip | ...; ProtocolNumber: Num; Num: 0..255    (integer number)"
+     "syntax": "Protocol: ProtocolName | ProtocolNumber; ProtocolName: IpProtocol; IpProtocol: <name> | ddp | egp | encap | etherip | ...; ProtocolNumber: Num; Num: 0..255    (integer number)"
     },
     "rate": {
      "syntax": "Rate: Num[bps]; Num: 0..18446744073709551615    (integer number)"
@@ -4796,7 +4796,7 @@
      "description": "Interface name"
     },
     "remote-address": {
-     "syntax": "Address: IPv4 | Hostname; VRF: \u003cname\u003e"
+     "syntax": "Address: IPv4 | Hostname; VRF: <name>"
     }
    },
    "set": {
@@ -4848,7 +4848,7 @@
      "description": "Interface name"
     },
     "remote-address": {
-     "syntax": "Address: IPv4 | Hostname; VRF: \u003cname\u003e"
+     "syntax": "Address: IPv4 | Hostname; VRF: <name>"
     }
    }
   },
@@ -4897,7 +4897,7 @@
      "description": "Interface name"
     },
     "remote-address": {
-     "syntax": "Address: IPv6 | Hostname | Interface; Interface: \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | ...; Interface: \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | ...; VRF: \u003cname\u003e"
+     "syntax": "Address: IPv6 | Hostname | Interface; Interface: <name> | <name> | <name> | <name> | <name> | ...; Interface: <name> | <name> | <name> | <name> | <name> | ...; VRF: <name>"
     }
    },
    "set": {
@@ -4943,7 +4943,7 @@
      "description": "Interface name"
     },
     "remote-address": {
-     "syntax": "Address: IPv6 | Hostname | Interface; Interface: \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | ...; Interface: \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | ...; VRF: \u003cname\u003e"
+     "syntax": "Address: IPv6 | Hostname | Interface; Interface: <name> | <name> | <name> | <name> | <name> | ...; Interface: <name> | <name> | <name> | <name> | <name> | ...; VRF: <name>"
     }
    }
   },
@@ -5000,7 +5000,7 @@
     },
     "remote-address": {
      "description": "Remote address of tunnel",
-     "syntax": "Address: IPv4 | Hostname; VRF: \u003cname\u003e"
+     "syntax": "Address: IPv4 | Hostname; VRF: <name>"
     }
    },
    "set": {
@@ -5054,7 +5054,7 @@
     },
     "remote-address": {
      "description": "Remote address of tunnel",
-     "syntax": "Address: IPv4 | Hostname; VRF: \u003cname\u003e"
+     "syntax": "Address: IPv4 | Hostname; VRF: <name>"
     }
    }
   },
@@ -5103,7 +5103,7 @@
      "description": "Interface name"
     },
     "remote-address": {
-     "syntax": "Address: IPv6 | Hostname | Interface; Interface: \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | ...; Interface: \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | ...; VRF: \u003cname\u003e"
+     "syntax": "Address: IPv6 | Hostname | Interface; Interface: <name> | <name> | <name> | <name> | <name> | ...; Interface: <name> | <name> | <name> | <name> | <name> | ...; VRF: <name>"
     }
    },
    "set": {
@@ -5149,7 +5149,7 @@
      "description": "Interface name"
     },
     "remote-address": {
-     "syntax": "Address: IPv6 | Hostname | Interface; Interface: \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | ...; Interface: \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | ...; VRF: \u003cname\u003e"
+     "syntax": "Address: IPv6 | Hostname | Interface; Interface: <name> | <name> | <name> | <name> | <name> | ...; Interface: <name> | <name> | <name> | <name> | <name> | ...; VRF: <name>"
     }
    }
   },
@@ -5178,7 +5178,7 @@
     },
     "connect-to": {
      "description": "The IP address of the L2TP server to connect to",
-     "syntax": "Address: IPv4 | IPv6 | Hostname; VRF: \u003cname\u003e"
+     "syntax": "Address: IPv4 | IPv6 | Hostname; VRF: <name>"
     },
     "default-route-distance": {
      "syntax": "DefaultRouteDistance: Num; Num: 1..255    (integer number)"
@@ -5294,7 +5294,7 @@
     },
     "connect-to": {
      "description": "The IP address of the L2TP server to connect to",
-     "syntax": "Address: IPv4 | IPv6 | Hostname; VRF: \u003cname\u003e"
+     "syntax": "Address: IPv4 | IPv6 | Hostname; VRF: <name>"
     },
     "default-route-distance": {
      "syntax": "DefaultRouteDistance: Num; Num: 1..255    (integer number)"
@@ -5405,7 +5405,7 @@
     },
     "connect-to": {
      "description": "Remote server address or empty (zero) address for incoming connections",
-     "syntax": "Address: IPv4 | IPv6 | Hostname; VRF: \u003cname\u003e"
+     "syntax": "Address: IPv4 | IPv6 | Hostname; VRF: <name>"
     },
     "cookie-length": {
      "description": "Ignored for passive (incoming) connections (for incoming connections please use l2tp-server settings)",
@@ -5514,7 +5514,7 @@
     },
     "connect-to": {
      "description": "Remote server address or empty (zero) address for incoming connections",
-     "syntax": "Address: IPv4 | IPv6 | Hostname; VRF: \u003cname\u003e"
+     "syntax": "Address: IPv4 | IPv6 | Hostname; VRF: <name>"
     },
     "cookie-length": {
      "description": "Ignored for passive (incoming) connections (for incoming connections please use l2tp-server settings)",
@@ -5926,7 +5926,7 @@
     "passthrough-interface": {},
     "passthrough-mac": {
      "description": "auto will learn MAC from first packet",
-     "syntax": "PassthroughMac: Auto | PassthroughPeer; Auto: auto | \u003cname\u003e; PassthroughPeer: AB[:|-|.]CD[:|-|.]EF[:|-|.]GH[:|-|.]IJ[:|-|.]KL    (MAC address)",
+     "syntax": "PassthroughMac: Auto | PassthroughPeer; Auto: auto | <name>; PassthroughPeer: AB[:|-|.]CD[:|-|.]EF[:|-|.]GH[:|-|.]IJ[:|-|.]KL    (MAC address)",
      "values": [
       "auto"
      ]
@@ -5977,7 +5977,7 @@
     "passthrough-interface": {},
     "passthrough-mac": {
      "description": "auto will learn MAC from first packet",
-     "syntax": "PassthroughMac: Auto | PassthroughPeer; Auto: auto | \u003cname\u003e; PassthroughPeer: AB[:|-|.]CD[:|-|.]EF[:|-|.]GH[:|-|.]IJ[:|-|.]KL    (MAC address)",
+     "syntax": "PassthroughMac: Auto | PassthroughPeer; Auto: auto | <name>; PassthroughPeer: AB[:|-|.]CD[:|-|.]EF[:|-|.]GH[:|-|.]IJ[:|-|.]KL    (MAC address)",
      "values": [
       "auto"
      ]
@@ -6498,7 +6498,7 @@
      "description": "Short description of the item"
     },
     "connect-to": {
-     "syntax": "Address: IPv4 | IPv6 | Hostname; VRF: \u003cname\u003e"
+     "syntax": "Address: IPv4 | IPv6 | Hostname; VRF: <name>"
     },
     "disabled": {
      "description": "Defines whether item is ignored or used",
@@ -6598,7 +6598,7 @@
      "description": "Short description of the item"
     },
     "connect-to": {
-     "syntax": "Address: IPv4 | IPv6 | Hostname; VRF: \u003cname\u003e"
+     "syntax": "Address: IPv4 | IPv6 | Hostname; VRF: <name>"
     },
     "disabled": {
      "description": "Defines whether item is ignored or used",
@@ -7847,7 +7847,7 @@
      "description": "Short description of the item"
     },
     "connect-to": {
-     "syntax": "Address: IPv4 | IPv6 | Hostname; VRF: \u003cname\u003e"
+     "syntax": "Address: IPv4 | IPv6 | Hostname; VRF: <name>"
     },
     "default-route-distance": {
      "syntax": "DefaultRouteDistance: Num; Num: 1..255    (integer number)"
@@ -7948,7 +7948,7 @@
      "description": "Short description of the item"
     },
     "connect-to": {
-     "syntax": "Address: IPv4 | IPv6 | Hostname; VRF: \u003cname\u003e"
+     "syntax": "Address: IPv4 | IPv6 | Hostname; VRF: <name>"
     },
     "default-route-distance": {
      "syntax": "DefaultRouteDistance: Num; Num: 1..255    (integer number)"
@@ -8328,7 +8328,7 @@
      "description": "Interface name"
     },
     "peer": {
-     "syntax": "Address: IPv4 | IPv6; VRF: \u003cname\u003e"
+     "syntax": "Address: IPv4 | IPv6; VRF: <name>"
     },
     "pw-control-word": {
      "values": [
@@ -8400,7 +8400,7 @@
      "description": "Interface name"
     },
     "peer": {
-     "syntax": "Address: IPv4 | IPv6; VRF: \u003cname\u003e"
+     "syntax": "Address: IPv4 | IPv6; VRF: <name>"
     },
     "pw-control-word": {
      "values": [
@@ -10275,7 +10275,7 @@
    "kind": "singleton",
    "set": {
     "caps-man-addresses": {
-     "syntax": "Address: IPv4 | IPv6 | Hostname | Interface; Interface: \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | ...; Interface: \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | ..."
+     "syntax": "Address: IPv4 | IPv6 | Hostname | Interface; Interface: <name> | <name> | <name> | <name> | <name> | ...; Interface: <name> | <name> | <name> | <name> | <name> | ..."
     },
     "caps-man-certificate-common-names": {},
     "caps-man-names": {},
@@ -15421,7 +15421,7 @@
     "query-server-timeout": {},
     "query-total-timeout": {},
     "servers": {
-     "syntax": "Address: IPv4 | IPv6; VRF: \u003cname\u003e"
+     "syntax": "Address: IPv4 | IPv6; VRF: <name>"
     },
     "use-doh-server": {},
     "verify-doh-cert": {
@@ -15883,7 +15883,7 @@
      "syntax": "Priority: [!]Priority; Priority: Num; Num: 0..63    (integer number)"
     },
     "protocol": {
-     "syntax": "Protocol: [!]Protocol; Protocol: IpProtocol; IpProtocol: \u003cname\u003e | ddp | egp | encap | etherip | ..."
+     "syntax": "Protocol: [!]Protocol; Protocol: IpProtocol; IpProtocol: <name> | ddp | egp | encap | etherip | ..."
     },
     "psd": {
      "syntax": "WeightThreshold: Num; Num: 0..4294967295    (integer number)"
@@ -16099,7 +16099,7 @@
      "syntax": "Priority: [!]Priority; Priority: Num; Num: 0..63    (integer number)"
     },
     "protocol": {
-     "syntax": "Protocol: [!]Protocol; Protocol: IpProtocol; IpProtocol: \u003cname\u003e | ddp | egp | encap | etherip | ..."
+     "syntax": "Protocol: [!]Protocol; Protocol: IpProtocol; IpProtocol: <name> | ddp | egp | encap | etherip | ..."
     },
     "psd": {
      "syntax": "WeightThreshold: Num; Num: 0..4294967295    (integer number)"
@@ -16366,7 +16366,7 @@
     },
     "protocol": {
      "description": "Protocol name or number",
-     "syntax": "Protocol: [!]Protocol; Protocol: IpProtocol; IpProtocol: \u003cname\u003e | ddp | egp | encap | etherip | ..."
+     "syntax": "Protocol: [!]Protocol; Protocol: IpProtocol; IpProtocol: <name> | ddp | egp | encap | etherip | ..."
     },
     "psd": {
      "description": "Detect TCP un UDP scans",
@@ -16645,7 +16645,7 @@
     },
     "protocol": {
      "description": "Protocol name or number",
-     "syntax": "Protocol: [!]Protocol; Protocol: IpProtocol; IpProtocol: \u003cname\u003e | ddp | egp | encap | etherip | ..."
+     "syntax": "Protocol: [!]Protocol; Protocol: IpProtocol; IpProtocol: <name> | ddp | egp | encap | etherip | ..."
     },
     "psd": {
      "description": "Detect TCP un UDP scans",
@@ -16996,7 +16996,7 @@
     },
     "protocol": {
      "description": "Protocol name or number",
-     "syntax": "Protocol: [!]Protocol; Protocol: IpProtocol; IpProtocol: \u003cname\u003e | ddp | egp | encap | etherip | ..."
+     "syntax": "Protocol: [!]Protocol; Protocol: IpProtocol; IpProtocol: <name> | ddp | egp | encap | etherip | ..."
     },
     "psd": {
      "description": "Detect TCP un UDP scans",
@@ -17326,7 +17326,7 @@
     },
     "protocol": {
      "description": "Protocol name or number",
-     "syntax": "Protocol: [!]Protocol; Protocol: IpProtocol; IpProtocol: \u003cname\u003e | ddp | egp | encap | etherip | ..."
+     "syntax": "Protocol: [!]Protocol; Protocol: IpProtocol; IpProtocol: <name> | ddp | egp | encap | etherip | ..."
     },
     "psd": {
      "description": "Detect TCP un UDP scans",
@@ -17602,7 +17602,7 @@
     },
     "protocol": {
      "description": "Protocol name or number",
-     "syntax": "Protocol: [!]Protocol; Protocol: IpProtocol; IpProtocol: \u003cname\u003e | ddp | egp | encap | etherip | ..."
+     "syntax": "Protocol: [!]Protocol; Protocol: IpProtocol; IpProtocol: <name> | ddp | egp | encap | etherip | ..."
     },
     "psd": {
      "description": "Detect TCP un UDP scans",
@@ -17885,7 +17885,7 @@
     },
     "protocol": {
      "description": "Protocol name or number",
-     "syntax": "Protocol: [!]Protocol; Protocol: IpProtocol; IpProtocol: \u003cname\u003e | ddp | egp | encap | etherip | ..."
+     "syntax": "Protocol: [!]Protocol; Protocol: IpProtocol; IpProtocol: <name> | ddp | egp | encap | etherip | ..."
     },
     "psd": {
      "description": "Detect TCP un UDP scans",
@@ -18114,7 +18114,7 @@
      "syntax": "Priority: [!]Priority; Priority: Num; Num: 0..63    (integer number)"
     },
     "protocol": {
-     "syntax": "Protocol: [!]Protocol; Protocol: IpProtocol; IpProtocol: \u003cname\u003e | ddp | egp | encap | etherip | ..."
+     "syntax": "Protocol: [!]Protocol; Protocol: IpProtocol; IpProtocol: <name> | ddp | egp | encap | etherip | ..."
     },
     "psd": {
      "syntax": "WeightThreshold: Num; Num: 0..4294967295    (integer number)"
@@ -18300,7 +18300,7 @@
      "syntax": "Priority: [!]Priority; Priority: Num; Num: 0..63    (integer number)"
     },
     "protocol": {
-     "syntax": "Protocol: [!]Protocol; Protocol: IpProtocol; IpProtocol: \u003cname\u003e | ddp | egp | encap | etherip | ..."
+     "syntax": "Protocol: [!]Protocol; Protocol: IpProtocol; IpProtocol: <name> | ddp | egp | encap | etherip | ..."
     },
     "psd": {
      "syntax": "WeightThreshold: Num; Num: 0..4294967295    (integer number)"
@@ -19188,7 +19188,7 @@
     },
     "protocol": {
      "description": "IP protocol name",
-     "syntax": "Protocol: [!]Protocol; Protocol: IpProtocol; IpProtocol: \u003cname\u003e | ddp | egp | encap | etherip | ..."
+     "syntax": "Protocol: [!]Protocol; Protocol: IpProtocol; IpProtocol: <name> | ddp | egp | encap | etherip | ..."
     },
     "server": {
      "description": "Name of the HotSpot server this rule appliet to",
@@ -19237,7 +19237,7 @@
     },
     "protocol": {
      "description": "IP protocol name",
-     "syntax": "Protocol: [!]Protocol; Protocol: IpProtocol; IpProtocol: \u003cname\u003e | ddp | egp | encap | etherip | ..."
+     "syntax": "Protocol: [!]Protocol; Protocol: IpProtocol; IpProtocol: <name> | ddp | egp | encap | etherip | ..."
     },
     "server": {
      "description": "Name of the HotSpot server this rule appliet to",
@@ -20919,7 +20919,7 @@
      "syntax": "Address: IPv4"
     },
     "gateway": {
-     "syntax": "Address: IPv4 | IPv6 | Interface; Interface: \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | ...; Interface: \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | ...; VRF: \u003cname\u003e"
+     "syntax": "Address: IPv4 | IPv6 | Interface; Interface: <name> | <name> | <name> | <name> | <name> | ...; Interface: <name> | <name> | <name> | <name> | <name> | ...; VRF: <name>"
     },
     "pref-src": {
      "syntax": "Address: IPv4"
@@ -20962,7 +20962,7 @@
      "syntax": "Address: IPv4"
     },
     "gateway": {
-     "syntax": "Address: IPv4 | IPv6 | Interface; Interface: \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | ...; Interface: \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | ...; VRF: \u003cname\u003e"
+     "syntax": "Address: IPv4 | IPv6 | Interface; Interface: <name> | <name> | <name> | <name> | <name> | ...; Interface: <name> | <name> | <name> | <name> | <name> | ...; VRF: <name>"
     },
     "pref-src": {
      "syntax": "Address: IPv4"
@@ -23215,7 +23215,7 @@
      "syntax": "DstPort: [!]Port; Port: Range[,Port]    (max 15 times); Range: Start[-End]; Start: 0..65535; End: 0..65535"
     },
     "headers": {
-     "syntax": "Headers: [!]Type[:Mode]; Type: hop|dst|route|frag|ah|esp|\u003cname\u003e|proto[,Type*]"
+     "syntax": "Headers: [!]Type[:Mode]; Type: hop|dst|route|frag|ah|esp|<name>|proto[,Type*]"
     },
     "hop-limit": {
      "values": [
@@ -23291,7 +23291,7 @@
      "syntax": "Priority: [!]Priority; Priority: Num; Num: 0..63    (integer number)"
     },
     "protocol": {
-     "syntax": "Protocol: [!]Protocol; Protocol: IpProtocol; IpProtocol: \u003cname\u003e | ddp | egp | encap | etherip | ..."
+     "syntax": "Protocol: [!]Protocol; Protocol: IpProtocol; IpProtocol: <name> | ddp | egp | encap | etherip | ..."
     },
     "random": {
      "syntax": "Percent: Num; Num: 1..99    (integer number)"
@@ -23415,7 +23415,7 @@
      "syntax": "DstPort: [!]Port; Port: Range[,Port]    (max 15 times); Range: Start[-End]; Start: 0..65535; End: 0..65535"
     },
     "headers": {
-     "syntax": "Headers: [!]Type[:Mode]; Type: hop|dst|route|frag|ah|esp|\u003cname\u003e|proto[,Type*]"
+     "syntax": "Headers: [!]Type[:Mode]; Type: hop|dst|route|frag|ah|esp|<name>|proto[,Type*]"
     },
     "hop-limit": {
      "values": [
@@ -23491,7 +23491,7 @@
      "syntax": "Priority: [!]Priority; Priority: Num; Num: 0..63    (integer number)"
     },
     "protocol": {
-     "syntax": "Protocol: [!]Protocol; Protocol: IpProtocol; IpProtocol: \u003cname\u003e | ddp | egp | encap | etherip | ..."
+     "syntax": "Protocol: [!]Protocol; Protocol: IpProtocol; IpProtocol: <name> | ddp | egp | encap | etherip | ..."
     },
     "random": {
      "syntax": "Percent: Num; Num: 1..99    (integer number)"
@@ -23650,7 +23650,7 @@
      "syntax": "DstPrefix: IPv6/0..128    (IPv6 prefix)"
     },
     "headers": {
-     "syntax": "Headers: [!]Type[:Mode]; Type: hop|dst|route|frag|ah|esp|\u003cname\u003e|proto[,Type*]"
+     "syntax": "Headers: [!]Type[:Mode]; Type: hop|dst|route|frag|ah|esp|<name>|proto[,Type*]"
     },
     "hop-limit": {
      "values": [
@@ -23759,7 +23759,7 @@
      "syntax": "Priority: [!]Priority; Priority: Num; Num: 0..63    (integer number)"
     },
     "protocol": {
-     "syntax": "Protocol: [!]Protocol; Protocol: IpProtocol; IpProtocol: \u003cname\u003e | ddp | egp | encap | etherip | ..."
+     "syntax": "Protocol: [!]Protocol; Protocol: IpProtocol; IpProtocol: <name> | ddp | egp | encap | etherip | ..."
     },
     "random": {
      "syntax": "Percent: Num; Num: 1..99    (integer number)"
@@ -23895,7 +23895,7 @@
      "syntax": "DstPrefix: IPv6/0..128    (IPv6 prefix)"
     },
     "headers": {
-     "syntax": "Headers: [!]Type[:Mode]; Type: hop|dst|route|frag|ah|esp|\u003cname\u003e|proto[,Type*]"
+     "syntax": "Headers: [!]Type[:Mode]; Type: hop|dst|route|frag|ah|esp|<name>|proto[,Type*]"
     },
     "hop-limit": {
      "values": [
@@ -24004,7 +24004,7 @@
      "syntax": "Priority: [!]Priority; Priority: Num; Num: 0..63    (integer number)"
     },
     "protocol": {
-     "syntax": "Protocol: [!]Protocol; Protocol: IpProtocol; IpProtocol: \u003cname\u003e | ddp | egp | encap | etherip | ..."
+     "syntax": "Protocol: [!]Protocol; Protocol: IpProtocol; IpProtocol: <name> | ddp | egp | encap | etherip | ..."
     },
     "random": {
      "syntax": "Percent: Num; Num: 1..99    (integer number)"
@@ -24139,7 +24139,7 @@
      "syntax": "DstPort: [!]Port; Port: Range[,Port]    (max 15 times); Range: Start[-End]; Start: 0..65535; End: 0..65535"
     },
     "headers": {
-     "syntax": "Headers: [!]Type[:Mode]; Type: hop|dst|route|frag|ah|esp|\u003cname\u003e|proto[,Type*]"
+     "syntax": "Headers: [!]Type[:Mode]; Type: hop|dst|route|frag|ah|esp|<name>|proto[,Type*]"
     },
     "hop-limit": {
      "values": [
@@ -24215,7 +24215,7 @@
      "syntax": "Priority: [!]Priority; Priority: Num; Num: 0..63    (integer number)"
     },
     "protocol": {
-     "syntax": "Protocol: [!]Protocol; Protocol: IpProtocol; IpProtocol: \u003cname\u003e | ddp | egp | encap | etherip | ..."
+     "syntax": "Protocol: [!]Protocol; Protocol: IpProtocol; IpProtocol: <name> | ddp | egp | encap | etherip | ..."
     },
     "random": {
      "syntax": "Percent: Num; Num: 1..99    (integer number)"
@@ -24329,7 +24329,7 @@
      "syntax": "DstPort: [!]Port; Port: Range[,Port]    (max 15 times); Range: Start[-End]; Start: 0..65535; End: 0..65535"
     },
     "headers": {
-     "syntax": "Headers: [!]Type[:Mode]; Type: hop|dst|route|frag|ah|esp|\u003cname\u003e|proto[,Type*]"
+     "syntax": "Headers: [!]Type[:Mode]; Type: hop|dst|route|frag|ah|esp|<name>|proto[,Type*]"
     },
     "hop-limit": {
      "values": [
@@ -24405,7 +24405,7 @@
      "syntax": "Priority: [!]Priority; Priority: Num; Num: 0..63    (integer number)"
     },
     "protocol": {
-     "syntax": "Protocol: [!]Protocol; Protocol: IpProtocol; IpProtocol: \u003cname\u003e | ddp | egp | encap | etherip | ..."
+     "syntax": "Protocol: [!]Protocol; Protocol: IpProtocol; IpProtocol: <name> | ddp | egp | encap | etherip | ..."
     },
     "random": {
      "syntax": "Percent: Num; Num: 1..99    (integer number)"
@@ -24501,7 +24501,7 @@
      "syntax": "DstPort: [!]Port; Port: Range[,Port]    (max 15 times); Range: Start[-End]; Start: 0..65535; End: 0..65535"
     },
     "headers": {
-     "syntax": "Headers: [!]Type[:Mode]; Type: hop|dst|route|frag|ah|esp|\u003cname\u003e|proto[,Type*]"
+     "syntax": "Headers: [!]Type[:Mode]; Type: hop|dst|route|frag|ah|esp|<name>|proto[,Type*]"
     },
     "hop-limit": {
      "values": [
@@ -24577,7 +24577,7 @@
      "syntax": "Priority: [!]Priority; Priority: Num; Num: 0..63    (integer number)"
     },
     "protocol": {
-     "syntax": "Protocol: [!]Protocol; Protocol: IpProtocol; IpProtocol: \u003cname\u003e | ddp | egp | encap | etherip | ..."
+     "syntax": "Protocol: [!]Protocol; Protocol: IpProtocol; IpProtocol: <name> | ddp | egp | encap | etherip | ..."
     },
     "random": {
      "syntax": "Percent: Num; Num: 1..99    (integer number)"
@@ -24664,7 +24664,7 @@
      "syntax": "DstPort: [!]Port; Port: Range[,Port]    (max 15 times); Range: Start[-End]; Start: 0..65535; End: 0..65535"
     },
     "headers": {
-     "syntax": "Headers: [!]Type[:Mode]; Type: hop|dst|route|frag|ah|esp|\u003cname\u003e|proto[,Type*]"
+     "syntax": "Headers: [!]Type[:Mode]; Type: hop|dst|route|frag|ah|esp|<name>|proto[,Type*]"
     },
     "hop-limit": {
      "values": [
@@ -24740,7 +24740,7 @@
      "syntax": "Priority: [!]Priority; Priority: Num; Num: 0..63    (integer number)"
     },
     "protocol": {
-     "syntax": "Protocol: [!]Protocol; Protocol: IpProtocol; IpProtocol: \u003cname\u003e | ddp | egp | encap | etherip | ..."
+     "syntax": "Protocol: [!]Protocol; Protocol: IpProtocol; IpProtocol: <name> | ddp | egp | encap | etherip | ..."
     },
     "random": {
      "syntax": "Percent: Num; Num: 1..99    (integer number)"
@@ -25221,7 +25221,7 @@
      "syntax": "Address: IPv6"
     },
     "gateway": {
-     "syntax": "Address: IPv6 | String | Interface; Interface: \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | ...; Interface: \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | ...; VRF: \u003cname\u003e"
+     "syntax": "Address: IPv6 | String | Interface; Interface: <name> | <name> | <name> | <name> | <name> | ...; Interface: <name> | <name> | <name> | <name> | <name> | ...; VRF: <name>"
     },
     "pref-src": {
      "syntax": "Address: IPv6"
@@ -25261,7 +25261,7 @@
      "syntax": "Address: IPv6"
     },
     "gateway": {
-     "syntax": "Address: IPv6 | String | Interface; Interface: \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | ...; Interface: \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | ...; VRF: \u003cname\u003e"
+     "syntax": "Address: IPv6 | String | Interface; Interface: <name> | <name> | <name> | <name> | <name> | ...; Interface: <name> | <name> | <name> | <name> | <name> | ...; VRF: <name>"
     },
     "pref-src": {
      "syntax": "Address: IPv6"
@@ -25754,7 +25754,7 @@
      ]
     },
     "transport": {
-     "syntax": "Address: IPv4 | IPv6 | Interface; Interface: \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | ...; Interface: \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | ...; VRF: \u003cname\u003e"
+     "syntax": "Address: IPv4 | IPv6 | Interface; Interface: <name> | <name> | <name> | <name> | <name> | ...; Interface: <name> | <name> | <name> | <name> | <name> | ...; VRF: <name>"
     }
    },
    "set": {
@@ -25775,7 +25775,7 @@
      ]
     },
     "transport": {
-     "syntax": "Address: IPv4 | IPv6 | Interface; Interface: \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | ...; Interface: \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | ...; VRF: \u003cname\u003e"
+     "syntax": "Address: IPv4 | IPv6 | Interface; Interface: <name> | <name> | <name> | <name> | <name> | ...; Interface: <name> | <name> | <name> | <name> | <name> | ...; VRF: <name>"
     }
    }
   },
@@ -25799,7 +25799,7 @@
      "syntax": "Label: LabelEnum | LabelNum; LabelNum: Num; Num: 16..1048576    (integer number)"
     },
     "nexthop": {
-     "syntax": "Address: IPv4 | IPv6 | Interface; Interface: \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | ...; Interface: \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | ..."
+     "syntax": "Address: IPv4 | IPv6 | Interface; Interface: <name> | <name> | <name> | <name> | <name> | ...; Interface: <name> | <name> | <name> | <name> | <name> | ..."
     },
     "vrf": {}
    },
@@ -25821,7 +25821,7 @@
      "syntax": "Label: LabelEnum | LabelNum; LabelNum: Num; Num: 16..1048576    (integer number)"
     },
     "nexthop": {
-     "syntax": "Address: IPv4 | IPv6 | Interface; Interface: \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | ...; Interface: \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | ..."
+     "syntax": "Address: IPv4 | IPv6 | Interface; Interface: <name> | <name> | <name> | <name> | <name> | ...; Interface: <name> | <name> | <name> | <name> | <name> | ..."
     },
     "vrf": {}
    }
@@ -27679,7 +27679,7 @@
     },
     "address": {
      "description": "The address of radius",
-     "syntax": "Address: IPv4 | IPv6; VRF: \u003cname\u003e"
+     "syntax": "Address: IPv4 | IPv6; VRF: <name>"
     },
     "authentication-port": {
      "description": "Default port 1645 to RFC",
@@ -27745,7 +27745,7 @@
     },
     "address": {
      "description": "The address of radius",
-     "syntax": "Address: IPv4 | IPv6; VRF: \u003cname\u003e"
+     "syntax": "Address: IPv4 | IPv6; VRF: <name>"
     },
     "authentication-port": {
      "description": "Default port 1645 to RFC",
@@ -27978,7 +27978,7 @@
      ]
     },
     "local.address": {
-     "syntax": "Address: IPv4 | IPv6 | Interface; Interface: \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | ...; Interface: \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | ..."
+     "syntax": "Address: IPv4 | IPv6 | Interface; Interface: <name> | <name> | <name> | <name> | <name> | ...; Interface: <name> | <name> | <name> | <name> | <name> | ..."
     },
     "local.port": {
      "syntax": "LocalPort: Num; Num: 0..4294967295    (integer number)"
@@ -28068,7 +28068,7 @@
      ]
     },
     "output.redistribute": {
-     "syntax": "OutputRedistribute: connected|\u003cname\u003e|rip|ospf|isis|bgp|vpn|dhcp|fantasy|modem|bgp-mpls-vpn|slaac[,OutputRedistribute*]"
+     "syntax": "OutputRedistribute: connected|<name>|rip|ospf|isis|bgp|vpn|dhcp|fantasy|modem|bgp-mpls-vpn|slaac[,OutputRedistribute*]"
     },
     "output.remove-private-as": {
      "values": [
@@ -28077,7 +28077,7 @@
      ]
     },
     "remote.address": {
-     "syntax": "RemoteAddress: Address[+Address]; Address: IPv4 | IPv6 | Interface; Interface: \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | ...; Interface: \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | ..."
+     "syntax": "RemoteAddress: Address[+Address]; Address: IPv4 | IPv6 | Interface; Interface: <name> | <name> | <name> | <name> | <name> | ...; Interface: <name> | <name> | <name> | <name> | <name> | ..."
     },
     "remote.allowed-as": {},
     "remote.as": {
@@ -28198,7 +28198,7 @@
      ]
     },
     "local.address": {
-     "syntax": "Address: IPv4 | IPv6 | Interface; Interface: \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | ...; Interface: \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | ..."
+     "syntax": "Address: IPv4 | IPv6 | Interface; Interface: <name> | <name> | <name> | <name> | <name> | ...; Interface: <name> | <name> | <name> | <name> | <name> | ..."
     },
     "local.port": {
      "syntax": "LocalPort: Num; Num: 0..4294967295    (integer number)"
@@ -28288,7 +28288,7 @@
      ]
     },
     "output.redistribute": {
-     "syntax": "OutputRedistribute: connected|\u003cname\u003e|rip|ospf|isis|bgp|vpn|dhcp|fantasy|modem|bgp-mpls-vpn|slaac[,OutputRedistribute*]"
+     "syntax": "OutputRedistribute: connected|<name>|rip|ospf|isis|bgp|vpn|dhcp|fantasy|modem|bgp-mpls-vpn|slaac[,OutputRedistribute*]"
     },
     "output.remove-private-as": {
      "values": [
@@ -28297,7 +28297,7 @@
      ]
     },
     "remote.address": {
-     "syntax": "RemoteAddress: Address[+Address]; Address: IPv4 | IPv6 | Interface; Interface: \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | ...; Interface: \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | ..."
+     "syntax": "RemoteAddress: Address[+Address]; Address: IPv4 | IPv6 | Interface; Interface: <name> | <name> | <name> | <name> | <name> | ...; Interface: <name> | <name> | <name> | <name> | <name> | ..."
     },
     "remote.allowed-as": {},
     "remote.as": {
@@ -28603,7 +28603,7 @@
      ]
     },
     "output.redistribute": {
-     "syntax": "OutputRedistribute: connected|\u003cname\u003e|rip|ospf|isis|bgp|vpn|dhcp|fantasy|modem|bgp-mpls-vpn|slaac[,OutputRedistribute*]"
+     "syntax": "OutputRedistribute: connected|<name>|rip|ospf|isis|bgp|vpn|dhcp|fantasy|modem|bgp-mpls-vpn|slaac[,OutputRedistribute*]"
     },
     "output.remove-private-as": {
      "values": [
@@ -28775,7 +28775,7 @@
      ]
     },
     "output.redistribute": {
-     "syntax": "OutputRedistribute: connected|\u003cname\u003e|rip|ospf|isis|bgp|vpn|dhcp|fantasy|modem|bgp-mpls-vpn|slaac[,OutputRedistribute*]"
+     "syntax": "OutputRedistribute: connected|<name>|rip|ospf|isis|bgp|vpn|dhcp|fantasy|modem|bgp-mpls-vpn|slaac[,OutputRedistribute*]"
     },
     "output.remove-private-as": {
      "values": [
@@ -28923,7 +28923,7 @@
     "export.filter-chain": {},
     "export.filter-select": {},
     "export.redistribute": {
-     "syntax": "ExportRedistribute: connected|\u003cname\u003e|rip|ospf|isis|bgp|vpn|dhcp|fantasy|modem|slaac[,ExportRedistribute*]"
+     "syntax": "ExportRedistribute: connected|<name>|rip|ospf|isis|bgp|vpn|dhcp|fantasy|modem|slaac[,ExportRedistribute*]"
     },
     "export.route-targets": {},
     "import.filter-chain": {},
@@ -28953,7 +28953,7 @@
     "export.filter-chain": {},
     "export.filter-select": {},
     "export.redistribute": {
-     "syntax": "ExportRedistribute: connected|\u003cname\u003e|rip|ospf|isis|bgp|vpn|dhcp|fantasy|modem|slaac[,ExportRedistribute*]"
+     "syntax": "ExportRedistribute: connected|<name>|rip|ospf|isis|bgp|vpn|dhcp|fantasy|modem|slaac[,ExportRedistribute*]"
     },
     "export.route-targets": {},
     "import.filter-chain": {},
@@ -28990,10 +28990,10 @@
      ]
     },
     "dst-address": {
-     "syntax": "Address: IPv4 | IPv6 | Interface; Interface: \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | ...; Interface: \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | ..."
+     "syntax": "Address: IPv4 | IPv6 | Interface; Interface: <name> | <name> | <name> | <name> | <name> | ...; Interface: <name> | <name> | <name> | <name> | <name> | ..."
     },
     "gateway": {
-     "syntax": "Address: IPv4 | IPv6 | Interface; Interface: \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | ...; Interface: \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | ...; VRF: \u003cname\u003e"
+     "syntax": "Address: IPv4 | IPv6 | Interface; Interface: <name> | <name> | <name> | <name> | <name> | ...; Interface: <name> | <name> | <name> | <name> | <name> | ...; VRF: <name>"
     },
     "instance-id": {
      "syntax": "InstanceId: Start[-End]; Start: 0..4294967295; End: 0..4294967295"
@@ -29043,10 +29043,10 @@
      ]
     },
     "dst-address": {
-     "syntax": "Address: IPv4 | IPv6 | Interface; Interface: \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | ...; Interface: \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | ..."
+     "syntax": "Address: IPv4 | IPv6 | Interface; Interface: <name> | <name> | <name> | <name> | <name> | ...; Interface: <name> | <name> | <name> | <name> | <name> | ..."
     },
     "gateway": {
-     "syntax": "Address: IPv4 | IPv6 | Interface; Interface: \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | ...; Interface: \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | ...; VRF: \u003cname\u003e"
+     "syntax": "Address: IPv4 | IPv6 | Interface; Interface: <name> | <name> | <name> | <name> | <name> | ...; Interface: <name> | <name> | <name> | <name> | <name> | ...; VRF: <name>"
     },
     "instance-id": {
      "syntax": "InstanceId: Start[-End]; Start: 0..4294967295; End: 0..4294967295"
@@ -29712,7 +29712,7 @@
     "l1.out-filter-chain": {},
     "l1.out-filter-select": {},
     "l1.redistribute": {
-     "syntax": "L1Redistribute: connected|\u003cname\u003e|rip|ospf|bgp|vpn|dhcp|fantasy|modem|bgp-mpls-vpn|slaac[,L1Redistribute*]"
+     "syntax": "L1Redistribute: connected|<name>|rip|ospf|bgp|vpn|dhcp|fantasy|modem|bgp-mpls-vpn|slaac[,L1Redistribute*]"
     },
     "l2.lsp-max-age": {
      "syntax": "L2LspMaxAge: Num; Num: 0..4294967295    (integer number)"
@@ -29736,7 +29736,7 @@
     "l2.out-filter-chain": {},
     "l2.out-filter-select": {},
     "l2.redistribute": {
-     "syntax": "L2Redistribute: connected|\u003cname\u003e|rip|ospf|bgp|vpn|dhcp|fantasy|modem|bgp-mpls-vpn|slaac[,L2Redistribute*]"
+     "syntax": "L2Redistribute: connected|<name>|rip|ospf|bgp|vpn|dhcp|fantasy|modem|bgp-mpls-vpn|slaac[,L2Redistribute*]"
     },
     "metric-type": {
      "values": [
@@ -29790,7 +29790,7 @@
     "l1.out-filter-chain": {},
     "l1.out-filter-select": {},
     "l1.redistribute": {
-     "syntax": "L1Redistribute: connected|\u003cname\u003e|rip|ospf|bgp|vpn|dhcp|fantasy|modem|bgp-mpls-vpn|slaac[,L1Redistribute*]"
+     "syntax": "L1Redistribute: connected|<name>|rip|ospf|bgp|vpn|dhcp|fantasy|modem|bgp-mpls-vpn|slaac[,L1Redistribute*]"
     },
     "l2.lsp-max-age": {
      "syntax": "L2LspMaxAge: Num; Num: 0..4294967295    (integer number)"
@@ -29814,7 +29814,7 @@
     "l2.out-filter-chain": {},
     "l2.out-filter-select": {},
     "l2.redistribute": {
-     "syntax": "L2Redistribute: connected|\u003cname\u003e|rip|ospf|bgp|vpn|dhcp|fantasy|modem|bgp-mpls-vpn|slaac[,L2Redistribute*]"
+     "syntax": "L2Redistribute: connected|<name>|rip|ospf|bgp|vpn|dhcp|fantasy|modem|bgp-mpls-vpn|slaac[,L2Redistribute*]"
     },
     "metric-type": {
      "values": [
@@ -30273,7 +30273,7 @@
     "out-filter-chain": {},
     "out-filter-select": {},
     "redistribute": {
-     "syntax": "Redistribute: connected|\u003cname\u003e|rip|ospf|isis|bgp|vpn|dhcp|fantasy|modem|bgp-mpls-vpn|slaac[,Redistribute*]"
+     "syntax": "Redistribute: connected|<name>|rip|ospf|isis|bgp|vpn|dhcp|fantasy|modem|bgp-mpls-vpn|slaac[,Redistribute*]"
     },
     "router-id": {
      "syntax": "RouterId: Ip | Id; Ip: A.B.C.D    (IP address)"
@@ -30326,7 +30326,7 @@
     "out-filter-chain": {},
     "out-filter-select": {},
     "redistribute": {
-     "syntax": "Redistribute: connected|\u003cname\u003e|rip|ospf|isis|bgp|vpn|dhcp|fantasy|modem|bgp-mpls-vpn|slaac[,Redistribute*]"
+     "syntax": "Redistribute: connected|<name>|rip|ospf|isis|bgp|vpn|dhcp|fantasy|modem|bgp-mpls-vpn|slaac[,Redistribute*]"
     },
     "router-id": {
      "syntax": "RouterId: Ip | Id; Ip: A.B.C.D    (IP address)"
@@ -30351,7 +30351,7 @@
    "kind": "list",
    "add": {
     "address": {
-     "syntax": "Address: IPv4 | Interface; Interface: \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | ...; Interface: \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | ..."
+     "syntax": "Address: IPv4 | Interface; Interface: <name> | <name> | <name> | <name> | <name> | ...; Interface: <name> | <name> | <name> | <name> | <name> | ..."
     },
     "area": {},
     "auth": {
@@ -30417,7 +30417,7 @@
    },
    "set": {
     "address": {
-     "syntax": "Address: IPv4 | Interface; Interface: \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | ...; Interface: \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | ..."
+     "syntax": "Address: IPv4 | Interface; Interface: <name> | <name> | <name> | <name> | <name> | ...; Interface: <name> | <name> | <name> | <name> | <name> | ..."
     },
     "area": {},
     "auth": {
@@ -30621,7 +30621,7 @@
    "kind": "list",
    "add": {
     "address": {
-     "syntax": "Address: IPv4 | IPv6 | Interface; Interface: \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | ...; Interface: \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | ..."
+     "syntax": "Address: IPv4 | IPv6 | Interface; Interface: <name> | <name> | <name> | <name> | <name> | ...; Interface: <name> | <name> | <name> | <name> | <name> | ..."
     },
     "area": {},
     "comment": {
@@ -30641,7 +30641,7 @@
    },
    "set": {
     "address": {
-     "syntax": "Address: IPv4 | IPv6 | Interface; Interface: \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | ...; Interface: \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | ..."
+     "syntax": "Address: IPv4 | IPv6 | Interface; Interface: <name> | <name> | <name> | <name> | <name> | ...; Interface: <name> | <name> | <name> | <name> | <name> | ..."
     },
     "area": {},
     "comment": {
@@ -30664,7 +30664,7 @@
    "kind": "list",
    "add": {
     "address": {
-     "syntax": "Address: IPv4 | IPv6 | Interface; Interface: \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | ...; Interface: \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | ..."
+     "syntax": "Address: IPv4 | IPv6 | Interface; Interface: <name> | <name> | <name> | <name> | <name> | ...; Interface: <name> | <name> | <name> | <name> | <name> | ..."
     },
     "disabled": {
      "description": "Defines whether item is ignored or used",
@@ -30689,7 +30689,7 @@
    },
    "set": {
     "address": {
-     "syntax": "Address: IPv4 | IPv6 | Interface; Interface: \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | ...; Interface: \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | ..."
+     "syntax": "Address: IPv4 | IPv6 | Interface; Interface: <name> | <name> | <name> | <name> | <name> | ...; Interface: <name> | <name> | <name> | <name> | <name> | ..."
     },
     "disabled": {
      "description": "Defines whether item is ignored or used",
@@ -30717,7 +30717,7 @@
    "kind": "list",
    "add": {
     "address": {
-     "syntax": "Address: IPv4 | IPv6 | Interface; Interface: \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | ...; Interface: \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | ..."
+     "syntax": "Address: IPv4 | IPv6 | Interface; Interface: <name> | <name> | <name> | <name> | <name> | ...; Interface: <name> | <name> | <name> | <name> | <name> | ..."
     },
     "disabled": {
      "description": "Defines whether item is ignored or used",
@@ -30739,7 +30739,7 @@
    },
    "set": {
     "address": {
-     "syntax": "Address: IPv4 | IPv6 | Interface; Interface: \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | ...; Interface: \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | ..."
+     "syntax": "Address: IPv4 | IPv6 | Interface; Interface: <name> | <name> | <name> | <name> | <name> | ...; Interface: <name> | <name> | <name> | <name> | <name> | ..."
     },
     "disabled": {
      "description": "Defines whether item is ignored or used",
@@ -31030,7 +31030,7 @@
     "out-filter-chain": {},
     "out-filter-select": {},
     "redistribute": {
-     "syntax": "Redistribute: connected|\u003cname\u003e|rip|ospf|isis|bgp|vpn|dhcp|fantasy|modem|bgp-mpls-vpn|slaac[,Redistribute*]"
+     "syntax": "Redistribute: connected|<name>|rip|ospf|isis|bgp|vpn|dhcp|fantasy|modem|bgp-mpls-vpn|slaac[,Redistribute*]"
     },
     "route-gc-timeout": {
      "syntax": "RouteGcTimeout: Num; Num: 0..4294967295    (integer number)"
@@ -31070,7 +31070,7 @@
     "out-filter-chain": {},
     "out-filter-select": {},
     "redistribute": {
-     "syntax": "Redistribute: connected|\u003cname\u003e|rip|ospf|isis|bgp|vpn|dhcp|fantasy|modem|bgp-mpls-vpn|slaac[,Redistribute*]"
+     "syntax": "Redistribute: connected|<name>|rip|ospf|isis|bgp|vpn|dhcp|fantasy|modem|bgp-mpls-vpn|slaac[,Redistribute*]"
     },
     "route-gc-timeout": {
      "syntax": "RouteGcTimeout: Num; Num: 0..4294967295    (integer number)"
@@ -31221,7 +31221,7 @@
    "kind": "list",
    "add": {
     "address": {
-     "syntax": "Address: IPv4 | IPv6 | Interface; Interface: \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | ...; Interface: \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | ..."
+     "syntax": "Address: IPv4 | IPv6 | Interface; Interface: <name> | <name> | <name> | <name> | <name> | ...; Interface: <name> | <name> | <name> | <name> | <name> | ..."
     },
     "disabled": {
      "description": "Defines whether item is ignored or used",
@@ -31234,7 +31234,7 @@
    },
    "set": {
     "address": {
-     "syntax": "Address: IPv4 | IPv6 | Interface; Interface: \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | ...; Interface: \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | ..."
+     "syntax": "Address: IPv4 | IPv6 | Interface; Interface: <name> | <name> | <name> | <name> | <name> | ...; Interface: <name> | <name> | <name> | <name> | <name> | ..."
     },
     "disabled": {
      "description": "Defines whether item is ignored or used",
@@ -31373,7 +31373,7 @@
      ]
     },
     "dst-address": {
-     "syntax": "Address: IPv4 | IPv6 | Interface; Interface: \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | ...; Interface: \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | ...; VRF: \u003cname\u003e"
+     "syntax": "Address: IPv4 | IPv6 | Interface; Interface: <name> | <name> | <name> | <name> | <name> | ...; Interface: <name> | <name> | <name> | <name> | <name> | ...; VRF: <name>"
     },
     "interface": {},
     "min-prefix": {
@@ -31384,7 +31384,7 @@
     },
     "routing-mark": {},
     "src-address": {
-     "syntax": "Address: IPv4 | IPv6 | Interface; Interface: \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | ...; Interface: \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | ...; VRF: \u003cname\u003e"
+     "syntax": "Address: IPv4 | IPv6 | Interface; Interface: <name> | <name> | <name> | <name> | <name> | ...; Interface: <name> | <name> | <name> | <name> | <name> | ...; VRF: <name>"
     },
     "table": {},
     "vrf": {}
@@ -31411,7 +31411,7 @@
      ]
     },
     "dst-address": {
-     "syntax": "Address: IPv4 | IPv6 | Interface; Interface: \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | ...; Interface: \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | ...; VRF: \u003cname\u003e"
+     "syntax": "Address: IPv4 | IPv6 | Interface; Interface: <name> | <name> | <name> | <name> | <name> | ...; Interface: <name> | <name> | <name> | <name> | <name> | ...; VRF: <name>"
     },
     "interface": {},
     "min-prefix": {
@@ -31422,7 +31422,7 @@
     },
     "routing-mark": {},
     "src-address": {
-     "syntax": "Address: IPv4 | IPv6 | Interface; Interface: \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | ...; Interface: \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | ...; VRF: \u003cname\u003e"
+     "syntax": "Address: IPv4 | IPv6 | Interface; Interface: <name> | <name> | <name> | <name> | <name> | ...; Interface: <name> | <name> | <name> | <name> | <name> | ...; VRF: <name>"
     },
     "table": {},
     "vrf": {}
@@ -33052,7 +33052,7 @@
     },
     "watch-address": {
      "description": "The system will reboot in case 6 sequential pings to the given IP address will fail",
-     "syntax": "WatchAddress: Ip | Ipv6; Ip: \u003cname\u003e | A.B.C.D    (IP address); Ipv6: Address[%Interface]; Address: see documentation"
+     "syntax": "WatchAddress: Ip | Ipv6; Ip: <name> | A.B.C.D    (IP address); Ipv6: Address[%Interface]; Address: see documentation"
     },
     "watchdog-timer": {
      "description": "Reboot if system is unresponsive for a minute",
@@ -33450,7 +33450,7 @@
     },
     "host": {
      "description": "Host IP address",
-     "syntax": "Address: IPv4 | IPv6 | Hostname | Interface; Interface: \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | ...; Interface: \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | ...; VRF: \u003cname\u003e"
+     "syntax": "Address: IPv4 | IPv6 | Hostname | Interface; Interface: <name> | <name> | <name> | <name> | <name> | ...; Interface: <name> | <name> | <name> | <name> | <name> | ...; VRF: <name>"
     },
     "http-codes": {
      "syntax": "HttpResponseRange: Start[-End]; Start: 100..599; End: 100..599"
@@ -33571,7 +33571,7 @@
     },
     "host": {
      "description": "Host IP address",
-     "syntax": "Address: IPv4 | IPv6 | Hostname | Interface; Interface: \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | ...; Interface: \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | \u003cname\u003e | ...; VRF: \u003cname\u003e"
+     "syntax": "Address: IPv4 | IPv6 | Hostname | Interface; Interface: <name> | <name> | <name> | <name> | <name> | ...; Interface: <name> | <name> | <name> | <name> | <name> | ...; VRF: <name>"
     },
     "http-codes": {
      "syntax": "HttpResponseRange: Start[-End]; Start: 100..599; End: 100..599"
@@ -33761,7 +33761,7 @@
     "secret": {},
     "sim-pin": {},
     "sms-storage": {
-     "description": "Memory for reading, writing, sending and receiving operations (\u003cmem1\u003e, \u003cmem2\u003e and \u003cmem3\u003e in ETSI TS 127 005), will be used in further +CPMS commands (setting effective when using AT commands only)"
+     "description": "Memory for reading, writing, sending and receiving operations (<mem1>, <mem2> and <mem3> in ETSI TS 127 005), will be used in further +CPMS commands (setting effective when using AT commands only)"
     }
    },
    "print": {

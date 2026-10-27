@@ -5,7 +5,7 @@ ifeq ($(OS),Windows_NT)
 	EXT := .exe
 endif
 
-.PHONY: docs debug
+.PHONY: docs debug coverage
 
 all: docs tfformat compile checksum clean
 
@@ -59,3 +59,11 @@ checksum:
 
 clean:
 	rm terraform-provider-routeros_${VERSION}
+# Dump every router in ROS_COVERAGE_HOSTS (space separated https:// URLs,
+# credentials from ROS_USERNAME/ROS_PASSWORD) and write the coverage table.
+coverage:
+	@test -n "$(ROS_COVERAGE_HOSTS)" || { echo "set ROS_COVERAGE_HOSTS='https://router1 https://router2'"; exit 1; }
+	cd tools/ros-coverage && files="" && \
+	for h in $(ROS_COVERAGE_HOSTS); do f=$$(go run . dump -url $$h) || exit 1; files="$$files $$f"; done && \
+	v=$$(echo $$files | sed -E 's/.*schema-([0-9.]+)-.*/\1/') && \
+	go run . compare $$files > coverage-$$v.md && echo "tools/ros-coverage/coverage-$$v.md"
