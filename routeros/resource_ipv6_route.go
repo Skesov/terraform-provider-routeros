@@ -110,6 +110,11 @@ func ResourceIPv6Route() *schema.Resource {
 			Optional:    true,
 			Description: "VRF interface name.",
 		},
+		"connect": {
+			Type:        schema.TypeBool,
+			Computed:    true,
+			Description: "",
+		},
 	}
 	return &schema.Resource{
 		CreateContext: DefaultCreate(resSchema),

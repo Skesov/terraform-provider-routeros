@@ -146,6 +146,18 @@ func ResourceIpv6DhcpServer() *schema.Resource {
 			Optional:    true,
 			Description: "Allow the server to send Reconfigure messages to clients.",
 		},
+		"add_dns_entries": {
+			Type:             schema.TypeBool,
+			Optional:         true,
+			Description:      "",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
+		"add_dns_entries_suffix": {
+			Type:             schema.TypeString,
+			Optional:         true,
+			Description:      "Used only if add-dns-entries=yes. Appends suffix to DNS entry and adds Option 39 (Fully Qualified Domain Name) to responses.",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
 	}
 
 	return &schema.Resource{

@@ -190,6 +190,7 @@ func ResourceOpenVPNServer() *schema.Resource {
 			Description: "IPv6 prefix address which will be used when generating the OVPN interface on the server " +
 				"side.",
 		},
+		KeyComment: PropCommentRw,
 	}
 
 	return &schema.Resource{

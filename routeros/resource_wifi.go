@@ -162,6 +162,19 @@ func ResourceWifi() *schema.Resource {
 			ValidateDiagFunc: ValidationMapKeyNames,
 			DiffSuppressFunc: AlwaysPresentNotUserProvided,
 		},
+		"mld_interface": {
+			Type:             schema.TypeString,
+			Optional:         true,
+			Description:      "",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
+		"mld_name": {
+			Type:             schema.TypeString,
+			Optional:         true,
+			Description:      "",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
+		KeyDynamic: PropDynamicRo,
 	}
 
 	return &schema.Resource{

@@ -243,6 +243,30 @@ func ResourceToolNetwatch() *schema.Resource {
 			Description:      "The DNS server that the probe should send its requests to, if not specified it will use the value from `/ip dns`.",
 			DiffSuppressFunc: AlwaysPresentNotUserProvided,
 		},
+		"certificate": {
+			Type:             schema.TypeString,
+			Optional:         true,
+			Description:      "",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
+		"check_certificate": {
+			Type:             schema.TypeBool,
+			Optional:         true,
+			Description:      "",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
+		"ignore_initial_down": {
+			Type:             schema.TypeBool,
+			Optional:         true,
+			Description:      "",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
+		"ignore_initial_up": {
+			Type:             schema.TypeBool,
+			Optional:         true,
+			Description:      "",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
 	}
 
 	return &schema.Resource{

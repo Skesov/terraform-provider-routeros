@@ -26,6 +26,7 @@ resource "routeros_ip_dhcp_relay" "relay" {
 - `dhcp_server_vrf` (String) The VRF table this resource operates on.
 - `disabled` (Boolean)
 - `local_address` (String) The unique IP address of this DHCP relay needed for DHCP server to distinguish relays. If set to 0.0.0.0 - the IP address will be chosen automatically
+- `local_address_as_src_ip` (Boolean)
 - `relay_info_remote_id` (String) Specified string will be used to construct Option 82 instead of client's MAC address. Option 82 consist of: interface from which packets was received + client mac address or relay-info-remote-id
 
 ### Read-Only

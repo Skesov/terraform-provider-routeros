@@ -25,6 +25,8 @@ func ResourceIPv6DhcpClientOption() *schema.Resource {
 			Computed:    true,
 			Description: "raw_value is computed from value.",
 		},
+		KeyComment: PropCommentRw,
+		KeyDefault: PropDefaultRo,
 	}
 	return &schema.Resource{
 		CreateContext: DefaultCreate(resSchema),

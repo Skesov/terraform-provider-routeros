@@ -22,6 +22,7 @@ resource "routeros_wifi_security" "security1" {
 ### Optional
 
 - `authentication_types` (Set of String) Authentication types to enable on the interface.
+- `beacon_protection` (String) Possible values: `disabled`, `enabled`.
 - `comment` (String)
 - `connect_group` (String) APs within the same connect group do not allow more than 1 client device with the same MAC address.
 - `connect_priority` (String) An option to determine how a connection is handled if the MAC address of the client device is the same as that of another active connection to another AP.

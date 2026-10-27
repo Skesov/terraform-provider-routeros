@@ -212,6 +212,12 @@ func ResourceIPv6DhcpClient() *schema.Resource {
 			Description:      "Whether to validate the DUID of the IPv6 DHCP Server.",
 			DiffSuppressFunc: AlwaysPresentNotUserProvided,
 		},
+		"custom_duid": {
+			Type:             schema.TypeString,
+			Optional:         true,
+			Description:      "Used as client DUID, overrides use-interface-duid.",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
 	}
 	return &schema.Resource{
 		CreateContext: DefaultCreate(resSchema),

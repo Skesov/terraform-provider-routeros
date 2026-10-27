@@ -28,6 +28,8 @@ resource "routeros_ipv6_dhcp_server" "test" {
 
 ### Optional
 
+- `add_dns_entries` (Boolean)
+- `add_dns_entries_suffix` (String) Used only if add-dns-entries=yes. Appends suffix to DNS entry and adds Option 39 (Fully Qualified Domain Name) to responses.
 - `address_lists` (Set of String) Firewall address lists to which the allocated addresses and prefixes will be added if the lease is bound.
 - `address_pool` (String) IPv6 pool, from which to take IPv6 address for the clients. The prefix length of the pool must be 128.
 - `allow_dual_stack_queue` (Boolean) Creates a single simple queue entry for both IPv4 and IPv6 addresses, and uses the MAC address and DUID for identification. Requires IPv6 DHCP Server to have this option enabled as well to work properly.

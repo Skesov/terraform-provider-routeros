@@ -72,6 +72,8 @@ func ResourceIpService() *schema.Resource {
 	resSchema := map[string]*schema.Schema{
 		MetaResourcePath: PropResourcePath("/ip/service"),
 		MetaId:           PropId(Id),
+		// Only dynamic per-connection rows carry these; the resource reads the static row.
+		MetaSkipFields: PropSkipFields("connection", "local", "remote"),
 
 		"address": {
 			Type:        schema.TypeString,

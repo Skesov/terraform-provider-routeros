@@ -22,6 +22,7 @@ func ResourceIpTFTPSettings() *schema.Resource {
 				"than this.",
 			DiffSuppressFunc: AlwaysPresentNotUserProvided,
 		},
+		KeyVrf: PropVrfRw,
 	}
 	return &schema.Resource{
 		CreateContext: DefaultSystemCreate(resSchema),

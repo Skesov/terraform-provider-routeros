@@ -22,6 +22,7 @@ resource "routeros_wifi_cap" "settings" {
 - `enabled` (Boolean) Disable or enable the CAP functionality.
 - `lock_to_caps_man` (Boolean) Lock CAP to the first CAPsMAN it connects to.
 - `mld_datapath` (String) Datapath used for multi-link operation. Available in RouterOS starting from version 7.22.3.
+- `mld_static` (Boolean)
 - `slaves_datapath` (String) Name of the bridge interface the CAP will be added to.
 - `slaves_static` (Boolean) An option that creates static virtual interfaces.
 

@@ -21,6 +21,12 @@ func ResourceIpIpsecPolicyGroup() *schema.Resource {
 		KeyDefault: PropDefaultRo,
 		KeyName:    PropName(""),
 		KeyComment: PropCommentRw,
+		"interface": {
+			Type:             schema.TypeString,
+			Optional:         true,
+			Description:      "",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
 	}
 
 	return &schema.Resource{

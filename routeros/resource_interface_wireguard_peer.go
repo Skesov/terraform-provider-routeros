@@ -137,6 +137,12 @@ func ResourceInterfaceWireguardPeer() *schema.Resource {
 			Computed:    true,
 			Description: "The total amount of bytes transmitted to the peer.",
 		},
+		"client_mtu": {
+			Type:             schema.TypeInt,
+			Optional:         true,
+			Description:      "",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
 	}
 	return &schema.Resource{
 		CreateContext: DefaultCreate(resSchema),

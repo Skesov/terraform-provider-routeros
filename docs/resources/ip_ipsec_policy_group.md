@@ -18,6 +18,7 @@ resource "routeros_ip_ipsec_policy_group" "test" {
 ### Optional
 
 - `comment` (String)
+- `interface` (String)
 
 ### Read-Only
 

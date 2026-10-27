@@ -166,6 +166,12 @@ func ResourceDhcpServer() *schema.Resource {
 			Description: "Allow the server to send Reconfigure (forcerenew) messages to clients, prompting them to renew " +
 				"configuration without waiting for their lease to expire.",
 		},
+		"ipv6_only_preferred": {
+			Type:             schema.TypeBool,
+			Optional:         true,
+			Description:      "",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
 	}
 	return &schema.Resource{
 		CreateContext: DefaultCreate(resSchema),

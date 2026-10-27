@@ -181,6 +181,12 @@ func ResourceInterfaceEthernetSwitch() *schema.Resource {
 			Computed:    true,
 			Description: "Switch-chip type.",
 		},
+		"switch_all_ports": {
+			Type:             schema.TypeBool,
+			Optional:         true,
+			Description:      "",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
 	}
 
 	resRead := func(ctx context.Context, d *schema.ResourceData, m interface{}) diag.Diagnostics {

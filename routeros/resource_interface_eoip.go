@@ -39,6 +39,12 @@ func ResourceInterfaceEoip() *schema.Resource {
 			Default:     0,
 			Description: "Unique tunnel identifier, which must match the other side of the tunnel.",
 		},
+		"arp_accept": {
+			Type:             schema.TypeBool,
+			Optional:         true,
+			Description:      "",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
 	}
 
 	return &schema.Resource{

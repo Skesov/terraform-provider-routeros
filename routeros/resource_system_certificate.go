@@ -379,6 +379,12 @@ func ResourceSystemCertificate() *schema.Resource {
 			Description:      "Organizational Unit Name (eg, section).",
 			DiffSuppressFunc: AlwaysPresentNotUserProvided,
 		},
+		"trust_store": {
+			Type:             schema.TypeString,
+			Optional:         true,
+			Description:      "",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
 	}
 
 	certImport := func(ctx context.Context, attrBlock any, d *schema.ResourceData, m interface{}) diag.Diagnostics {

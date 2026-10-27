@@ -65,7 +65,7 @@ func ResourceInterfaceEthernetSwitchPort() *schema.Resource {
 	resSchema := map[string]*schema.Schema{
 		MetaResourcePath: PropResourcePath("/interface/ethernet/switch/port"),
 		MetaId:           PropId(Id),
-		MetaSkipFields: PropSkipFields("name", "rx_1024_1518", "rx_128_255", "rx_1519_max", "rx_256_511", "rx_512_1023", "rx_64",
+		MetaSkipFields: PropSkipFields("name", "rx_drop", "rx_packet", "tx_drop", "rx_1024_1518", "rx_128_255", "rx_1519_max", "rx_256_511", "rx_512_1023", "rx_64",
 			"rx_65_127", "rx_align_error", "rx_broadcast", "rx_bytes", "rx_fcs_error", "rx_fragment", "rx_multicast", "rx_overflow",
 			"rx_pause", "rx_too_long", "rx_too_short", "tx_1024_1518", "tx_128_255", "tx_1519_max", "tx_256_511", "tx_512_1023", "tx_64",
 			"tx_65_127", "tx_broadcast", "tx_bytes", "tx_collision", "tx_deferred", "tx_excessive_collision", "tx_excessive_deferred",
@@ -165,6 +165,18 @@ func ResourceInterfaceEthernetSwitchPort() *schema.Resource {
 			Optional:         true,
 			Description:      "Changes the VLAN lookup mechanism against the VLAN Table for ingress traffic.",
 			ValidateFunc:     validation.StringInSlice([]string{"check", "disabled", "fallback", "secure"}, false),
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
+		"egress_rate": {
+			Type:             schema.TypeString,
+			Optional:         true,
+			Description:      "",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
+		"ingress_rate": {
+			Type:             schema.TypeString,
+			Optional:         true,
+			Description:      "",
 			DiffSuppressFunc: AlwaysPresentNotUserProvided,
 		},
 	}

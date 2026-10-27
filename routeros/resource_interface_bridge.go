@@ -345,6 +345,66 @@ func ResourceInterfaceBridge() *schema.Resource {
 			DiffSuppressFunc: AlwaysPresentNotUserProvided,
 		},
 		// Some properties are not implemented, see: https://wiki.mikrotik.com/wiki/Manual:Interface/Bridge
+		"arp_inspection": {
+			Type:             schema.TypeBool,
+			Optional:         true,
+			Description:      "",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
+		"dhcp_agent_circuit_id": {
+			Type:             schema.TypeString,
+			Optional:         true,
+			Description:      "Specify the relay agent circuit-id suboption value of the option 82 to be added to the DHCP messages passing through the bridge.\nThe string length is limited to 255 characters with the default value being: $(INTERFACE):$(VID).\nThe string value can contain variables, whose names must be enclosed in parentheses and prepended by a dollar sign.\nExample: 'some_arbitrary_text $(VID) another_piece_of_text $(INTERFACE)'.\nThe following variables are supported: HOSTNAME, INTERFACE, VID and BRIDGEMAC.\nFor the compatibility with previous versions, where the remote-id value was fixed, the semicolon appearing in the default value expression is not\nincluded in the remote-id value, in the case when the vlan filtering is not enabled.",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
+		"dhcp_agent_remote_id": {
+			Type:             schema.TypeString,
+			Optional:         true,
+			Description:      "Specify the relay agent remote-id suboption value of the option 82 to be added to the DHCP messages passing through the bridge.\nThe string length is limited to 255 characters with the default value being: $(BRIDGEMAC).\nThe string value can contain variables, whose names must be enclosed in parentheses and prepended by a dollar sign.\nExample: 'some_arbitrary_text $(HOSTNAME) another_piece_of_text $(BRIDGEMAC)'.\nThe following variables are supported: HOSTNAME, INTERFACE, VID and BRIDGEMAC.",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
+		"dhcpv6_agent_circuit_id": {
+			Type:             schema.TypeString,
+			Optional:         true,
+			Description:      "Specify the DHCPv6 option 18 value to be added to the DHCPv6 messages passing through the bridge.\nThe string length is limited to 255 characters with the default value being: $(INTERFACE):$(VID).\nThe string value can contain variables, whose names must be enclosed in parentheses and prepended by a dollar sign.\nExample: 'some_arbitrary_text $(VID) another_piece_of_text $(INTERFACE)'.\nThe following variables are supported: HOSTNAME, INTERFACE, VID and BRIDGEMAC.",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
+		"dhcpv6_agent_remote_id": {
+			Type:             schema.TypeString,
+			Optional:         true,
+			Description:      "Specify the DHCPv6 option 37 value to be added to the DHCPv6 messages passing through the bridge.\nThe string length is limited to 255 characters with the default value being: $(BRIDGEMAC).\nThe string value can contain variables, whose names must be enclosed in parentheses and prepended by a dollar sign.\nExample: 'some_arbitrary_text $(VID) another_piece_of_text $(INTERFACE)'.\nThe following variables are supported: HOSTNAME, INTERFACE, VID and BRIDGEMAC.",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
+		"ip_source_guard": {
+			Type:             schema.TypeBool,
+			Optional:         true,
+			Description:      "",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
+		"last_member_query_interval": {
+			Type:             schema.TypeString,
+			Optional:         true,
+			Description:      "",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
+		"mlag_init_delay": {
+			Type:             schema.TypeString,
+			Optional:         true,
+			Description:      "",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
+		"mlag_lacp_fallback": {
+			Type:             schema.TypeBool,
+			Optional:         true,
+			Description:      "",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
+		"querier_uses_bridge_address": {
+			Type:             schema.TypeBool,
+			Optional:         true,
+			Description:      "",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
 	}
 
 	validateBridgeMlag := func(d *schema.ResourceData) diag.Diagnostics {

@@ -19,10 +19,12 @@ resource "routeros_wifi_access_list" "radius" {
 - `allow_signal_out_of_range` (String) An option that permits the client's signal to be out of the range always or for some time interval.
 - `client_isolation` (Boolean) An option that specifies whether to deny forwarding data between clients connected to the same interface.
 - `comment` (String)
+- `days` (String)
 - `disabled` (Boolean)
 - `interface` (String) Interface name to compare with an interface to which the client actually connects to.
 - `mac_address` (String) MAC address of the client.
 - `mac_address_mask` (String) MAC address mask to apply when comparing clients' addresses.
+- `multi_passphrase_group` (String)
 - `passphrase` (String) PSK passphrase for the client if some PSK authentication algorithm is used.
 - `place_before` (String) Before which position the rule will be inserted.  
 	> Please check the effect of this option, as it does not work as you think!  

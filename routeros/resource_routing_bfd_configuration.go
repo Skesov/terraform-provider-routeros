@@ -73,7 +73,8 @@ func ResourceRoutingBfdConfiguration() *schema.Resource {
 			Optional:    true,
 			Description: "",
 		},
-		KeyVrf: PropVrfRw,
+		KeyVrf:     PropVrfRw,
+		KeyComment: PropCommentRw,
 	}
 
 	return &schema.Resource{

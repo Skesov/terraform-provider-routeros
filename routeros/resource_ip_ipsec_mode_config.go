@@ -103,6 +103,7 @@ func ResourceIpIpsecModeConfig() *schema.Resource {
 			ValidateFunc:     validation.StringInSlice([]string{"exclusively", "yes", "no"}, false),
 			DiffSuppressFunc: AlwaysPresentNotUserProvided,
 		},
+		KeyDefault: PropDefaultRo,
 	}
 
 	return &schema.Resource{

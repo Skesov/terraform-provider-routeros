@@ -92,6 +92,7 @@ func ResourceIpTFTP() *schema.Resource {
 				"is left empty it defaults to `.*`.",
 			DiffSuppressFunc: AlwaysPresentNotUserProvided,
 		},
+		KeyComment: PropCommentRw,
 	}
 	return &schema.Resource{
 		CreateContext: DefaultCreate(resSchema),

@@ -29,6 +29,7 @@ resource "routeros_ipv6_firewall_filter" "rule" {
 - `connection_bytes` (String) Matches packets only if a given amount of bytes has been transfered through the particular connection.
 - `connection_limit` (String) Matches connections per address or address block after given value is reached. Should be used together with connection-state=new and/or with tcp-flags=syn because matcher is very resource intensive.
 - `connection_mark` (String) Matches packets marked via mangle facility with particular connection mark. If no-mark is set, rule will match any unmarked connection.
+- `connection_nat_state` (String)
 - `connection_rate` (String) Connection Rate is a firewall matcher that allow to capture traffic based on present speed of the connection (0..4294967295).
 - `connection_state` (String) Interprets the connection tracking analysis data for a particular packet.
 - `connection_type` (String) Matches packets from related connections based on information from their connection tracking helpers.
@@ -79,6 +80,7 @@ resource "routeros_ipv6_firewall_filter" "rule" {
 - `tcp_mss` (String) Matches TCP MSS value of an IP packet.
 - `time` (String) Allows to create a filter based on the packets' arrival time and date or, for locally generated packets, departure time and date.
 - `tls_host` (String) Allows matching HTTPS traffic based on TLS SNI hostname.
+- `tos` (String)
 
 ### Read-Only
 

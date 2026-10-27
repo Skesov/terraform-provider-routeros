@@ -14,6 +14,7 @@ resource "routeros_ip_dns_adlist" "test" {
 
 ### Optional
 
+- `comment` (String)
 - `disabled` (Boolean)
 - `file` (String) Used to specify a local file path from which to read adlist data.
 - `ssl_verify` (Boolean) Specifies whether to validate the server's SSL certificate when connecting to an online resource. Will use the `/certificate` list to verify server validity.

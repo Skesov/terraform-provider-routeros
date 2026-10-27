@@ -80,6 +80,12 @@ policy = ["ftp", "read", "write"]
 				"It means that all scripts having start-time is startup and interval is 0 will be executed once each " +
 				"time router boots. If the interval is set to value other than 0 scheduler will not run at startup.",
 		},
+		"days": {
+			Type:             schema.TypeString,
+			Optional:         true,
+			Description:      "",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
 	}
 
 	return &schema.Resource{

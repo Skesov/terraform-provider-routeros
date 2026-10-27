@@ -48,6 +48,7 @@ func ResourceInterfaceWireguard() *schema.Resource {
 			Description: "A base64 public key is calculated from the private key.",
 		},
 		KeyRunning: PropRunningRo,
+		KeyVrf:     PropVrfRw,
 	}
 
 	return &schema.Resource{

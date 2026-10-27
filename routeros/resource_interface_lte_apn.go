@@ -119,6 +119,12 @@ func ResourceInterfaceLteApn() *schema.Resource {
 			Description:      "Username used if any of the authentication protocols are active.",
 			DiffSuppressFunc: AlwaysPresentNotUserProvided,
 		},
+		"passthrough_subnet_size": {
+			Type:             schema.TypeString,
+			Optional:         true,
+			Description:      "",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
 	}
 
 	return &schema.Resource{

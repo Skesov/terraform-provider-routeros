@@ -23,6 +23,12 @@ func ResourceInterfaceGre6() *schema.Resource {
 		KeyName:          PropNameForceNewRw,
 		KeyRemoteAddress: PropRemoteAddressRw,
 		KeyRunning:       PropRunningRo,
+		"dont_fragment": {
+			Type:             schema.TypeString,
+			Optional:         true,
+			Description:      "Possible values: `inherit`, `no`.",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
 	}
 
 	return &schema.Resource{

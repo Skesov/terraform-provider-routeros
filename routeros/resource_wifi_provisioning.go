@@ -96,10 +96,17 @@ func ResourceWifiProvisioning() *schema.Resource {
 			Type:     schema.TypeList,
 			Optional: true,
 			Elem: &schema.Schema{
-				Type:         schema.TypeString,
-				ValidateFunc: validation.StringInSlice([]string{"2ghz-ax", "2ghz-g", "2ghz-n", "5ghz-a", "5ghz-ac", "5ghz-ax", "5ghz-n"}, false),
+				Type: schema.TypeString,
+				ValidateFunc: validation.StringInSlice([]string{"2ghz-ax", "2ghz-be", "2ghz-g", "2ghz-n", "5ghz-a", "5ghz-ac",
+					"5ghz-ax", "5ghz-be", "5ghz-n", "6ghz-ax", "6ghz-be", "60ghz-ad", "s1ghz-ah"}, false),
 			},
 			Description: "Match CAPs by supported modes.",
+		},
+		"supported_hw_caps": {
+			Type:             schema.TypeString,
+			Optional:         true,
+			Description:      "Possible values: `beacon-protection`, `channel-switch`, `hw-protection-mode`, `meshpoint`, `mlo`, `qos-classifier-dscp`, `sniffer`, `spectral`.",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
 		},
 	}
 

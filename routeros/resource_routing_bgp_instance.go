@@ -67,6 +67,12 @@ func ResourceRoutingBgpInstance() *schema.Resource {
 			Optional:    true,
 			Description: "Name of the VRF BGP connections operates on. By default always use the `main` routing table.",
 		},
+		"always_compare_med": {
+			Type:             schema.TypeBool,
+			Optional:         true,
+			Description:      "",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
 	}
 
 	return &schema.Resource{

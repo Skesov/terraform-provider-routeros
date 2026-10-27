@@ -15,7 +15,6 @@ resource "routeros_ip_ssh_server" "test" {
 
 ### Optional
 
-- `allow_none_crypto` (Boolean) Whether to allow connection if cryptographic algorithms are set to none.
 - `always_allow_password_login` (Boolean) Whether to allow password login at the same time when public key authorization is configured for a user.
 - `ciphers` (String) Allow to configure SSH ciphers.
 - `forwarding_enabled` (String) Allows to control which SSH forwarding method to allow:
@@ -25,6 +24,8 @@ resource "routeros_ip_ssh_server" "test" {
   * both - Allow both local and remote forwarding methods.
 - `host_key_size` (Number) RSA key size when host key is being regenerated.
 - `host_key_type` (String) Select host key type.
+- `known_hosts_trusted_subnets` (String) Skip host key validation for peers in these subnets.
+- `known_hosts_validation` (Boolean) Peer host key validation.
 - `publickey_authentication_options` (String) Sets public key authentication options.
 The touch-required option causes public key authentication using a FIDO authenticator algorithm to always require the signature to attest that a physically present user explicitlyconfirmed the authentication (usually by touching the authenticator).
 The verify-required option requires a FIDO key signature attest that the user was verified, e.g. via a PIN.
@@ -32,6 +33,7 @@ The verify-required option requires a FIDO key signature attest that the user wa
 
 ### Read-Only
 
+- `host_key_fingerprint` (String) Fingerprint of the SSH host key.
 - `id` (String) The ID of this resource.
 
 ## Import

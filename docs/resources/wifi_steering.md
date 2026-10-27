@@ -18,10 +18,16 @@ resource "routeros_wifi_steering" "steering1" {
 
 ### Optional
 
+- `2g_probe_delay` (Boolean)
 - `comment` (String)
 - `disabled` (Boolean)
 - `neighbor_group` (List of String) Neighbor group of potential roaming candidates.
 - `rrm` (Boolean) An option to enable sending 802.11k neighbor reports.
+- `transition_request_count` (String) Possible values: `unlimited`.
+- `transition_request_period` (String)
+- `transition_threshold` (String)
+- `transition_threshold_time` (String)
+- `transition_time` (String)
 - `wnm` (Boolean) An option to enable sending 802.11v BSS transition management requests.
 
 ### Read-Only

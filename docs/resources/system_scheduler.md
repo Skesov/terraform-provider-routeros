@@ -22,6 +22,7 @@ resource "routeros_system_scheduler" "schedule1" {
 ### Optional
 
 - `comment` (String)
+- `days` (String)
 - `disabled` (Boolean)
 - `interval` (String) Interval between two script executions, if time interval is set to zero, the script is only executed at its start time, otherwise it is executed repeatedly at the time interval is specified.
 - `policy` (List of String) List of applicable policies:

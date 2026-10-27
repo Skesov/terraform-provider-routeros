@@ -20,6 +20,8 @@ resource "routeros_ip_dhcp_server_lease" "dhcp_lease" {
 ### Optional
 
 - `address_lists` (String) Address list to which address will be added if lease is bound.
+- `agent_circuit_id` (String) Circuit ID of DHCP relay agent. If each character should be valid ASCII text symbol or else this value is displayed as hex dump.
+- `agent_remote_id` (String) Remote ID, set by DHCP relay agent.
 - `allow_dual_stack_queue` (Boolean) Creates a single simple queue entry for both IPv4 and IPv6 addresses, uses the MAC address and DUID for identification.
 - `always_broadcast` (Boolean) Send all replies as broadcasts.
 - `block_access` (Boolean) Whether to block access for this DHCP client (true|false).
@@ -30,7 +32,10 @@ resource "routeros_ip_dhcp_server_lease" "dhcp_lease" {
 - `disabled` (Boolean)
 - `insert_queue_before` (String) Specify where to place dynamic simple queue entries for static DCHP leases with rate-limit parameter set.
 - `lease_time` (String) Time that the client may use the address. If set to 0s lease will never expire.
+- `parent_queue` (String)
+- `queue_type` (String)
 - `rate_limit` (String) Adds a dynamic simple queue to limit IP's bandwidth to a specified rate. Requires the lease to be static.
+- `routes` (String) Routes that appear on the server when the client is connected.
 - `server` (String) Server name which serves this client.
 - `use_src_mac` (Boolean) When this option is set server uses source MAC address instead of received CHADDR to assign address.
 
@@ -41,8 +46,7 @@ resource "routeros_ip_dhcp_server_lease" "dhcp_lease" {
 - `active_hostname` (String) The hostname of the machine currently holding the DHCP lease.
 - `active_mac_address` (String) The MAC address of of the machine currently holding the DHCP lease.
 - `active_server` (String) Actual dhcp server, which serves this client.
-- `agent_circuit_id` (String) Circuit ID of DHCP relay agent. If each character should be valid ASCII text symbol or else this value is displayed as hex dump.
-- `agent_remote_id` (String) Remote ID, set by DHCP relay agent.
+- `age` (String)
 - `blocked` (Boolean) Whether the lease is blocked.
 - `class_id` (String) Class ID of the client. This option is available in RouterOS starting from version 7.16.
 - `dynamic` (Boolean) Whether the dhcp lease is static or dynamic. Dynamic leases are not guaranteed to continue to be assigned to that specific device.

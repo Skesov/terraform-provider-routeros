@@ -17,6 +17,7 @@ resource "routeros_routing_bfd_configuration" "test" {
 
 - `address_list` (String) Name of the address list in which users IP address will be added.
 - `addresses` (Set of String) Set of IP (v4 or v6) addresses or CIDR networks.
+- `comment` (String)
 - `disabled` (Boolean)
 - `forbid_bfd` (Boolean)
 - `interfaces` (Set of String) List of interfaces.

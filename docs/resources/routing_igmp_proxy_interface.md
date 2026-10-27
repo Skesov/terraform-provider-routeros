@@ -23,6 +23,10 @@ resource "routeros_routing_igmp_proxy_interface" "test" {
 - `alternative_subnets` (Set of String) By default, only packets from directly attached subnets are accepted. This parameter can be used to specify a list of alternative valid packet source subnets, both for data or IGMP packets. Has an effect only on the upstream interface. Should be used when the source of multicast data often is in a different IP network.
 - `comment` (String)
 - `disabled` (Boolean)
+- `last_member_query_interval` (String)
+- `query_interval` (String)
+- `query_response_interval` (String)
+- `robustness` (Number)
 - `threshold` (Number) Minimal TTL. Packets received with a lower TTL value are ignored.
 - `upstream` (Boolean) The interface is called `upstream` if it's in the direction of the root of the multicast tree. An IGMP forwarding router must have exactly one upstream interface configured. The upstream interface is used to send out IGMP membership requests.
 

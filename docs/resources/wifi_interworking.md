@@ -19,7 +19,8 @@ resource "routeros_wifi_interworking" "interworking1" {
 ### Optional
 
 - `3gpp_info` (List of String) Cellular network advertisement information - country and network codes.
-- `3gpp_raw` (String) Cellular network advertisement information - country and network codes.
+- `3gpp_info_raw` (String) Cellular network advertisement information as a raw hex string.
+- `3gpp_raw` (String, Deprecated) Cellular network advertisement information - country and network codes.
 - `asra` (Boolean) An option to enable Additional Steps Required for Access.
 - `authentication_types` (List of String) A list of authentication types that is only effective when `asra` is set to yes.
 - `comment` (String)

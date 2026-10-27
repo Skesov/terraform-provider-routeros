@@ -88,6 +88,12 @@ func ResourceIpIpsecPeer() *schema.Resource {
 				"or xauth is enabled for ikev1.",
 			DiffSuppressFunc: AlwaysPresentNotUserProvided,
 		},
+		"ppk_secret": {
+			Type:             schema.TypeString,
+			Optional:         true,
+			Description:      "Static PPK secret with \"static-ppk-secret\" ID used when no one-time key/psk exist for this peer, ensure the key has 256 bits of entropy.",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
 	}
 
 	return &schema.Resource{

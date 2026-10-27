@@ -101,6 +101,12 @@ func ResourceWifiCap() *schema.Resource {
 			Optional:    true,
 			Description: "An option that creates static virtual interfaces.",
 		},
+		"mld_static": {
+			Type:             schema.TypeBool,
+			Optional:         true,
+			Description:      "",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
 	}
 
 	return &schema.Resource{

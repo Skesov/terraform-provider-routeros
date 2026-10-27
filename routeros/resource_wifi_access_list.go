@@ -110,6 +110,18 @@ func ResourceWifiAccessList() *schema.Resource {
 			Description: "Time of the day and days of the week when the rule is applicable.",
 		},
 		KeyVlanId: PropVlanIdRw("VLAN ID to use for VLAN tagging or `none`.", false),
+		"days": {
+			Type:             schema.TypeString,
+			Optional:         true,
+			Description:      "",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
+		"multi_passphrase_group": {
+			Type:             schema.TypeString,
+			Optional:         true,
+			Description:      "",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
 	}
 
 	return &schema.Resource{

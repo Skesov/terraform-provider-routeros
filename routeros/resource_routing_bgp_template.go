@@ -129,6 +129,21 @@ func ResourceRoutingBgpTemplate() *schema.Resource {
 			MaxItems:    1,
 			Elem: &schema.Resource{
 				Schema: map[string]*schema.Schema{
+					"accept_communities": {
+						Type:        schema.TypeString,
+						Optional:    true,
+						Description: "A quick way to filter incoming updates with specific communities.",
+					},
+					"accept_large_communities": {
+						Type:        schema.TypeString,
+						Optional:    true,
+						Description: "A quick way to filter incoming updates with specific large communities.",
+					},
+					"attr_error_handling": {
+						Type:        schema.TypeString,
+						Optional:    true,
+						Description: "How to handle malformed path attributes: `revised` treats them as withdrawn (RFC 7606).",
+					},
 					"accept_comunities": {
 						Type:     schema.TypeString,
 						Optional: true,
@@ -331,6 +346,21 @@ func ResourceRoutingBgpTemplate() *schema.Resource {
 			MaxItems:    1,
 			Elem: &schema.Resource{
 				Schema: map[string]*schema.Schema{
+					"as_override": {
+						Type:        schema.TypeBool,
+						Optional:    true,
+						Description: "If set, then all instances of the remote peer's AS number in the BGP AS-PATH attribute are replaced with the local AS number before sending a route update to that peer.",
+					},
+					"network_blackhole": {
+						Type:        schema.TypeBool,
+						Optional:    true,
+						Description: "Install a blackhole route for each network advertised with `output.network`.",
+					},
+					"remove_private_as": {
+						Type:        schema.TypeBool,
+						Optional:    true,
+						Description: "If set, then the BGP AS-PATH attribute is removed before sending out route updates if the attribute contains only private AS numbers.",
+					},
 					// May be "0" ?!?
 					// affinity (afi | alone | instance | main | remote-as | vrf; Default: )
 					"affinity": {

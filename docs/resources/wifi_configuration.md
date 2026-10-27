@@ -74,15 +74,20 @@ resource "routeros_wifi_configuration" "configuration1" {
 - `datapath` (Map of String) Datapath inline settings.
 - `deprioritize_unii_3_4` (Boolean) Whether to assign lower priority to channels with a control frequency of 5720 or 5825-5885 MHz. These channels are unsupported by some client devices, making their automatic selection undesirable. Defaults to `yes` in ETSI regulatory domains, elsewhere to `no`.
 - `disabled` (Boolean)
+- `distance` (String)
 - `dtim_period` (Number) A period at which to transmit multicast traffic, when there are client devices in power save mode connected to the AP.
 - `hide_ssid` (Boolean) This property has effect only in AP mode. Setting it to yes can remove this network from the list of wireless networks that are shown by some client software. Changing this setting does not improve the security of the wireless network, because SSID is included in other frames sent by the AP.
+- `hw_protection_mode` (String) Possible values: `cts-to-self`, `rts-cts`.
+- `installation` (String) Possible values: `indoor`, `outdoor`.
 - `interworking` (Map of String) Interworking inline settings.
 - `manager` (String) An option to specify the remote CAP mode.
+- `max_clients` (Number)
 - `mode` (String) An option to specify the access point operational mode.
 - `multicast_enhance` (String) An option to enable converting every multicast-address IP or IPv6 packet into multiple unicast-addresses frames for each connected station.
 - `qos_classifier` (String) An option to specify the QoS classifier.
 - `security` (Map of String) Security inline settings.
 - `ssid` (String) SSID (service set identifier) is a name broadcast in the beacons that identifies wireless network.
+- `station_roaming` (Boolean)
 - `steering` (Map of String) Steering inline settings.
 - `tx_chains` (Set of Number) Radio chains to use for transmitting signals.
 - `tx_power` (Number) A limit on the transmit power (in dBm) of the interface.

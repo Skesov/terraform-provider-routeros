@@ -46,6 +46,7 @@ func ResourceSystemLed() *schema.Resource {
 		"modem_signal_treshold": {
 			Type:             schema.TypeInt,
 			Optional:         true,
+			Deprecated:       "RouterOS has no `modem-signal-treshold`; use `modem_signal_threshold`.",
 			Description:      "An option to set the signal strength threshold for the modem LED.",
 			ValidateFunc:     validation.IntBetween(-113, -51),
 			DiffSuppressFunc: AlwaysPresentNotUserProvided,
@@ -61,6 +62,13 @@ func ResourceSystemLed() *schema.Resource {
 				"modem-signal", "modem-technology", "off", "on", "poe-fault", "poe-out",
 				"wireless-signal-strength", "wireless-status",
 			}, false),
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
+		"modem_signal_threshold": {
+			Type:             schema.TypeInt,
+			Optional:         true,
+			Description:      "An option to set the signal strength threshold for the modem LED.",
+			ValidateFunc:     validation.IntBetween(-113, -51),
 			DiffSuppressFunc: AlwaysPresentNotUserProvided,
 		},
 	}

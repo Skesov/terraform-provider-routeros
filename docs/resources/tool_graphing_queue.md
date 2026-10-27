@@ -19,6 +19,7 @@ resource "routeros_tool_graphing_queue" "test" {
 
 - `allow_address` (String) IP address range from which is allowed to access graphing information.
 - `allow_target` (Boolean) Whether to allow access to graphs from queue's target-address.
+- `comment` (String)
 - `disabled` (Boolean)
 - `store_on_disk` (Boolean) Defines whether to store collected information on system drive.
 

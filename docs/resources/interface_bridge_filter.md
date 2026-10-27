@@ -67,6 +67,7 @@ resource "routeros_move_items" "bridge_filter_rules" {
 
 ### Optional
 
+- `arp_dst_address` (String) ARP destination address.
 - `arp_dst_mac_address` (String) ARP destination MAC address
 - `arp_gratuitous` (Boolean) Matches ARP gratuitous packets.
 - `arp_hardware_type` (Number) ARP hardware type. This is normally Ethernet (Type 1).
@@ -77,8 +78,11 @@ resource "routeros_move_items" "bridge_filter_rules" {
 - `comment` (String)
 - `disabled` (Boolean)
 - `dst_address` (String) Destination IP address (only if MAC protocol is set to IP).
+- `dst_address6` (String)
 - `dst_mac_address` (String) Destination MAC address.
 - `dst_port` (String) List of destination port numbers or port number ranges.
+- `ieee802_3_sap` (String) DSAP (Destination Service Access Point) and SSAP (Source Service Access Point) of an 802.3 frame (RouterOS `802.3-sap`).
+- `ieee802_3_type` (String) Ethernet protocol type of an 802.3 SNAP frame (RouterOS `802.3-type`).
 - `in_bridge` (String) Bridge interface through which the packet is coming in.
 - `in_bridge_list` (String) Set of bridge interfaces defined in interface list. Works the same as in-bridge.
 - `in_interface` (String) Physical interface (i.e., bridge port) through which the packet is coming in.
@@ -103,12 +107,14 @@ resource "routeros_move_items" "bridge_filter_rules" {
 	> Please check the effect of this option, as it does not work as you think!  
 	> Best way to use in conjunction with a data source. See [example](../data-sources/ip_firewall.md#example-usage).
 - `src_address` (String) Source port number or range (only for TCP or UDP protocols).
+- `src_address6` (String)
 - `src_mac_address` (String) Source MAC address.
 - `src_port` (String) List of source port numbers or port number ranges.
 - `stp_flags` (String) Match packets with a certain packet mark.
 - `stp_forward_delay` (Number) Forward delay timer.
 - `stp_hello_time` (Number) STP hello packets time.
 - `stp_max_age` (Number) Maximal STP message age.
+- `stp_msg_age` (String) STP message age.
 - `stp_port` (Number) STP port identifier.
 - `stp_root_address` (String) Root bridge MAC address
 - `stp_root_cost` (Number) Root bridge cost.

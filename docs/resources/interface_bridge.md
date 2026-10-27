@@ -38,10 +38,33 @@ resource "routeros_interface_bridge" "mlag_bridge" {
   * local-proxy-arp - the router performs proxy ARP on the interface and sends replies to the same interface
   * proxy-arp - the router performs proxy ARP on the interface and sends replies to other interfaces
   * reply-only - the interface will only reply to requests originated from matching IP address/MAC address combinations which are entered as static entries in the ARP table. No dynamic entries will be automatically stored in the ARP table. Therefore for communications to be successful, a valid static entry must already exist.
+- `arp_inspection` (Boolean)
 - `arp_timeout` (String) ARP timeout is time how long ARP record is kept in ARP table after no packets are received from IP. Value auto equals to the value of arp-timeout in IP/Settings, default is 30s. Can use postfix `ms`, `s`, `m`, `h`, `d` for milliseconds, seconds, minutes, hours or days. If no postfix is set then seconds (s) is used.
 - `auto_mac` (Boolean) Automatically select one MAC address of bridge ports as a bridge MAC address, bridge MAC will be chosen from the first added bridge port. After a device reboot, the bridge MAC can change depending on the port-number.
 - `comment` (String)
+- `dhcp_agent_circuit_id` (String) Specify the relay agent circuit-id suboption value of the option 82 to be added to the DHCP messages passing through the bridge.
+The string length is limited to 255 characters with the default value being: $(INTERFACE):$(VID).
+The string value can contain variables, whose names must be enclosed in parentheses and prepended by a dollar sign.
+Example: 'some_arbitrary_text $(VID) another_piece_of_text $(INTERFACE)'.
+The following variables are supported: HOSTNAME, INTERFACE, VID and BRIDGEMAC.
+For the compatibility with previous versions, where the remote-id value was fixed, the semicolon appearing in the default value expression is not
+included in the remote-id value, in the case when the vlan filtering is not enabled.
+- `dhcp_agent_remote_id` (String) Specify the relay agent remote-id suboption value of the option 82 to be added to the DHCP messages passing through the bridge.
+The string length is limited to 255 characters with the default value being: $(BRIDGEMAC).
+The string value can contain variables, whose names must be enclosed in parentheses and prepended by a dollar sign.
+Example: 'some_arbitrary_text $(HOSTNAME) another_piece_of_text $(BRIDGEMAC)'.
+The following variables are supported: HOSTNAME, INTERFACE, VID and BRIDGEMAC.
 - `dhcp_snooping` (Boolean)
+- `dhcpv6_agent_circuit_id` (String) Specify the DHCPv6 option 18 value to be added to the DHCPv6 messages passing through the bridge.
+The string length is limited to 255 characters with the default value being: $(INTERFACE):$(VID).
+The string value can contain variables, whose names must be enclosed in parentheses and prepended by a dollar sign.
+Example: 'some_arbitrary_text $(VID) another_piece_of_text $(INTERFACE)'.
+The following variables are supported: HOSTNAME, INTERFACE, VID and BRIDGEMAC.
+- `dhcpv6_agent_remote_id` (String) Specify the DHCPv6 option 37 value to be added to the DHCPv6 messages passing through the bridge.
+The string length is limited to 255 characters with the default value being: $(BRIDGEMAC).
+The string value can contain variables, whose names must be enclosed in parentheses and prepended by a dollar sign.
+Example: 'some_arbitrary_text $(VID) another_piece_of_text $(INTERFACE)'.
+The following variables are supported: HOSTNAME, INTERFACE, VID and BRIDGEMAC.
 - `disabled` (Boolean)
 - `ether_type` (String) This property only has effect when vlan-filtering is set to yes.
 - `fast_forward` (Boolean)
@@ -51,13 +74,17 @@ resource "routeros_interface_bridge" "mlag_bridge" {
 - `igmp_snooping` (Boolean) Enables multicast group and port learning to prevent multicast traffic from flooding all interfaces in a bridge.
 - `igmp_version` (Number) Selects the IGMP version in which IGMP general membership queries will be generated. This property only has effect when igmp-snooping is set to yes.
 - `ingress_filtering` (Boolean) Enables or disables VLAN ingress filtering, which checks if the ingress port is a member of the received VLAN ID in the bridge VLAN table. Should be used with frame-types to specify if the ingress traffic should be tagged or untagged. This property only has effect when vlan-filtering is set to yes.
+- `ip_source_guard` (Boolean)
 - `last_member_interval` (String) If a port has fast-leave set to no and a bridge port receives a IGMP Leave message, then a IGMP Snooping enabled bridge will send a IGMP query to make sure that no devices has subscribed to a certain multicast stream on a bridge port.
 - `last_member_query_count` (Number) How many times should last-member-interval pass until a IGMP Snooping bridge will stop forwarding a certain multicast stream. This property only has effect when igmp-snooping is set to yes.
+- `last_member_query_interval` (String)
 - `max_hops` (Number) Bridge count which BPDU can pass in a MSTP enabled network in the same region before BPDU is being ignored. This property only has effect when protocol-mode is set to mstp.
 - `max_learned_entries` (String) An option to set the maximum number of learned hosts for the bridge interface. This option is available in RouterOS starting from version 7.16.
 - `max_message_age` (String) Changes the Max Age value in BPDU packets, which is transmitted by the root bridge. This property only has effect when protocol-mode is set to stp or rstp. Value: 6s..40s
 - `membership_interval` (String) Amount of time after an entry in the Multicast Database (MDB) is removed if a IGMP membership report is not received on a certain port. This property only has effect when igmp-snooping is set to yes.
 - `mlag_heartbeat` (String) Bridge-level MLAG heartbeat interval. Available in RouterOS starting from version 7.22.
+- `mlag_init_delay` (String)
+- `mlag_lacp_fallback` (Boolean)
 - `mlag_peer_port` (String) Bridge-level MLAG peer port. Available in RouterOS starting from version 7.22.
 - `mlag_priority` (Number) Bridge-level MLAG priority. Available in RouterOS starting from version 7.22.
 - `mld_version` (Number) Selects the MLD version. Version 2 adds support for source-specific multicast. This property only has effect when RouterOS IPv6 package is enabled and igmp-snooping is set to yes.
@@ -70,6 +97,7 @@ resource "routeros_interface_bridge" "mlag_bridge" {
 - `protocol_mode` (String) Select Spanning tree protocol (STP) or Rapid spanning tree protocol (RSTP) to ensure a loop-free topology for any bridged LAN.
 - `pvid` (Number) Port VLAN ID (pvid) specifies which VLAN the untagged ingress traffic is assigned to. It applies e.g. to frames sent from bridge IP and destined to a bridge port. This property only has effect when vlan-filtering is set to yes.
 - `querier_interval` (String) Used to change the interval how often a bridge checks if it is the active multicast querier. This property only has effect when igmp-snooping and multicast-querier is set to yes.
+- `querier_uses_bridge_address` (Boolean)
 - `query_interval` (String) Used to change the interval how often IGMP general membership queries are sent out. This property only has effect when igmp-snooping and multicast-querier is set to yes.
 - `query_response_interval` (String) Interval in which a IGMP capable device must reply to a IGMP query with a IGMP membership report. This property only has effect when igmp-snooping and multicast-querier is set to yes.
 - `ra_guard` (Boolean) Whether to enable IPv6 Router Advertisement guard on the bridge. Available in RouterOS starting from version 7.22.

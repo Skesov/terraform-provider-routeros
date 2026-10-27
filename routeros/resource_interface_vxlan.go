@@ -173,6 +173,24 @@ func ResourceInterfaceVxlan() *schema.Resource {
 			ValidateFunc:     validation.StringInSlice([]string{"ipv4", "ipv6"}, false),
 			DiffSuppressFunc: AlwaysPresentNotUserProvided,
 		},
+		"arp_accept": {
+			Type:             schema.TypeBool,
+			Optional:         true,
+			Description:      "",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
+		"bridge": {
+			Type:             schema.TypeString,
+			Optional:         true,
+			Description:      "",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
+		"bridge_pvid": {
+			Type:             schema.TypeInt,
+			Optional:         true,
+			Description:      "",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
 	}
 
 	return &schema.Resource{

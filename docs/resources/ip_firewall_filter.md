@@ -62,6 +62,7 @@ resource "routeros_ip_firewall_filter" "rule" {
 - `out_bridge_port_list` (String) Set of interfaces defined in interface list. Works the same as out-bridge-port.
 - `out_interface` (String) Interface the packet is leaving the router.
 - `out_interface_list` (String) Set of interfaces defined in interface list. Works the same as out-interface.
+- `p2p` (String) P2P program to match.
 - `packet_mark` (String) Matches packets marked via mangle facility with particular packet mark. If no-mark is set, the rule will match any unmarked packet.
 - `packet_size` (String) Matches packets of specified size or size range in bytes.
 - `per_connection_classifier` (String) PCC matcher allows dividing traffic into equal streams with the ability to keep packets with a specific set of options in one particular stream.
@@ -73,6 +74,7 @@ resource "routeros_ip_firewall_filter" "rule" {
 - `protocol` (String) Matches particular IP protocol specified by protocol name or number.
 - `psd` (String) Attempts to detect TCP and UDP scans. Parameters are in the following format WeightThreshold, DelayThreshold, LowPortWeight, HighPortWeight.
 - `random` (Number) Matches packets randomly with a given probability.
+- `realm` (String)
 - `reject_with` (String) Specifies ICMP error to be sent back if the packet is rejected. Applicable if action=reject.
 - `routing_mark` (String) Matches packets marked by mangle facility with particular routing mark.
 - `routing_table` (String) Matches packets which destination address is resolved in specific a routing table.
@@ -85,6 +87,7 @@ resource "routeros_ip_firewall_filter" "rule" {
 - `tcp_mss` (String) Matches TCP MSS value of an IP packet.
 - `time` (String) Allows to create a filter based on the packets' arrival time and date or, for locally generated packets, departure time and date.
 - `tls_host` (String) Allows matching HTTPS traffic based on TLS SNI hostname.
+- `tos` (String) Specifies a match to the value of Type of Service (ToS) field of IP header.
 - `ttl` (String) Matches packets TTL value.
 
 ### Read-Only

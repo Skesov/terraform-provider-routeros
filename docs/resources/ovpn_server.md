@@ -65,6 +65,7 @@ resource "routeros_interface_ovpn_server" "user1" {
 - `auth` (Set of String) Authentication methods that the server will accept.
 - `certificate` (String) Name of the certificate that the OVPN server will use.
 - `cipher` (Set of String) Allowed ciphers.
+- `comment` (String)
 - `default_profile` (String) Default profile to use.
 - `enable_tun_ipv6` (Boolean) Specifies if IPv6 IP tunneling mode should be possible with this OVPN server.
 - `enabled` (Boolean) Defines whether the OVPN server is enabled or not.

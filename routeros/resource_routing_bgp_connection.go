@@ -144,6 +144,11 @@ func ResourceRoutingBgpConnection() *schema.Resource {
 			MaxItems:    1,
 			Elem: &schema.Resource{
 				Schema: map[string]*schema.Schema{
+					"attr_error_handling": {
+						Type:        schema.TypeString,
+						Optional:    true,
+						Description: "How to handle malformed path attributes: `revised` treats them as withdrawn (RFC 7606).",
+					},
 					"accept_communities": {
 						Type:     schema.TypeString,
 						Optional: true,
@@ -412,6 +417,11 @@ func ResourceRoutingBgpConnection() *schema.Resource {
 			MaxItems:    1,
 			Elem: &schema.Resource{
 				Schema: map[string]*schema.Schema{
+					"network_blackhole": {
+						Type:        schema.TypeBool,
+						Optional:    true,
+						Description: "Install a blackhole route for each network advertised with `output.network`.",
+					},
 					// May be "0" ?!?
 					// affinity (afi | alone | instance | main | remote-as | vrf; Default: )
 					"affinity": {

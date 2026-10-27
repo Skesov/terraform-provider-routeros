@@ -14,6 +14,7 @@ resource "routeros_ip_tftp_settings" "tftp_settings" {
 ### Optional
 
 - `max_block_size` (Number) Maximum accepted block size value. During transfer negotiation phase, RouterOS device will not negotiate larger value than this.
+- `vrf` (String) The VRF table this resource operates on.
 
 ### Read-Only
 

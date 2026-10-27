@@ -155,6 +155,12 @@ func ResourceIPv6Address() *schema.Resource {
 			Description: "Whether address belongs to an interface which is a slave port to some other master interface",
 		},
 		KeyVrf: PropVrfRw,
+		"from_pool_policy": {
+			Type:             schema.TypeString,
+			Optional:         true,
+			Description:      "",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
 	}
 	return &schema.Resource{
 		CreateContext: DefaultCreate(resSchema),

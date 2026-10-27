@@ -287,6 +287,18 @@ func ResourcePPPProfile() *schema.Resource {
 			},
 			MaxItems: 2,
 		},
+		"bridge_port_trusted": {
+			Type:             schema.TypeBool,
+			Optional:         true,
+			Description:      "",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
+		"bridge_port_vid": {
+			Type:             schema.TypeInt,
+			Optional:         true,
+			Description:      "",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
 	}
 
 	return &schema.Resource{

@@ -36,6 +36,12 @@ func ResourceIpIpsecSettings() *schema.Resource {
 				"using the IKEv1 exchange mode.",
 			DiffSuppressFunc: AlwaysPresentNotUserProvided,
 		},
+		"ddos_cookie_threshold": {
+			Type:             schema.TypeInt,
+			Optional:         true,
+			Description:      "DDOS cookie activation threshold.",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
 	}
 
 	return &schema.Resource{

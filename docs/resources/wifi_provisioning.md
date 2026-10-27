@@ -37,6 +37,7 @@ resource "routeros_wifi_provisioning" "provisioning1" {
 - `slave_configurations` (List of String) If action specifies to create interfaces, then a new slave interface for each configuration profile in this list is created.
 - `slave_name_format` (String) The name format of the slave CAP interfaces. This option is available in RouterOS starting from version 7.16.
 - `supported_bands` (List of String) Match CAPs by supported modes.
+- `supported_hw_caps` (String) Possible values: `beacon-protection`, `channel-switch`, `hw-protection-mode`, `meshpoint`, `mlo`, `qos-classifier-dscp`, `sniffer`, `spectral`.
 
 ### Read-Only
 

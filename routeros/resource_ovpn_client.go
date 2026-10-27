@@ -156,6 +156,12 @@ func ResourceOpenVPNClient() *schema.Resource {
 				`hostname must be present in the server's certificate.`,
 			DiffSuppressFunc: AlwaysPresentNotUserProvided,
 		},
+		"disconnect_notify": {
+			Type:             schema.TypeBool,
+			Optional:         true,
+			Description:      "Send explicit disconnect notification when using UDP mode.",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
 	}
 
 	return &schema.Resource{

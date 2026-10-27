@@ -29,6 +29,8 @@ resource "routeros_tool_netwatch" "test" {
 ### Optional
 
 - `accept_icmp_time_exceeded` (Boolean) If the ICMP `time exceeded` message should be considered a valid response.
+- `certificate` (String)
+- `check_certificate` (Boolean)
 - `comment` (String)
 - `disabled` (Boolean)
 - `dns_server` (String) The DNS server that the probe should send its requests to, if not specified it will use the value from `/ip dns`.
@@ -37,6 +39,8 @@ resource "routeros_tool_netwatch" "test" {
 - `early_success_detection` (Boolean) Netwatch will not wait to finish all the packets to be processed to change probe status if it is already known that host will be considered as `up`.
 - `http_code_max` (Number) Response in the range [http-code-min , http-code-max] is a probe pass/OK; outside - a probe fail. See [mozilla-http-status](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status) or [rfc7231](https://datatracker.ietf.org/doc/html/rfc7231#section-6).
 - `http_code_min` (Number) OK/fail criteria for HTTP response code.
+- `ignore_initial_down` (Boolean)
+- `ignore_initial_up` (Boolean)
 - `interval` (String) The time interval between probe tests.
 - `packet_count` (Number) Total count of ICMP packets to send out within a single test.
 - `packet_interval` (String) The time between ICMP-request packet send.

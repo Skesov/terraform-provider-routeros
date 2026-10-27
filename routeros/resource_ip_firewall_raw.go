@@ -323,6 +323,12 @@ func ResourceIPFirewallRaw() *schema.Resource {
 			Optional:    true,
 			Description: "Matches packets TTL value.",
 		},
+		"tos": {
+			Type:             schema.TypeString,
+			Optional:         true,
+			Description:      "",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
 	}
 	return &schema.Resource{
 		CreateContext: DefaultCreate(resSchema),

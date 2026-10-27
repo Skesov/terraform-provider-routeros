@@ -18,6 +18,7 @@ resource "routeros_tool_graphing_interface" "test" {
 ### Optional
 
 - `allow_address` (String) IP address range from which is allowed to access graphing information.
+- `comment` (String)
 - `disabled` (Boolean)
 - `store_on_disk` (Boolean) Defines whether to store collected information on system drive.
 

@@ -42,6 +42,12 @@ func ResourceInterfaceMacVlan() *schema.Resource {
 		),
 		KeyL2Mtu: PropL2MtuRo,
 		KeyName:  PropNameForceNewRw,
+		"arp_accept": {
+			Type:             schema.TypeBool,
+			Optional:         true,
+			Description:      "",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
 	}
 
 	return &schema.Resource{

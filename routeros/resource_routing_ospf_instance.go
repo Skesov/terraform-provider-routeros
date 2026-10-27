@@ -108,6 +108,12 @@ func ResourceRoutingOspfInstance() *schema.Resource {
 			ValidateFunc: validation.IntBetween(2, 3),
 		},
 		KeyVrf: PropVrfRw,
+		"use_dn": {
+			Type:             schema.TypeBool,
+			Optional:         true,
+			Description:      "",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
 	}
 
 	return &schema.Resource{

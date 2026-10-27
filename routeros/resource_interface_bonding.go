@@ -251,6 +251,12 @@ func ResourceInterfaceBonding() *schema.Resource {
 				"compliant.",
 			ValidateFunc: validation.StringInSlice([]string{"layer-2", "layer-2-and-3", "layer-3-and-4"}, false),
 		},
+		"lacp_system_id": {
+			Type:             schema.TypeString,
+			Optional:         true,
+			Description:      "",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
 	}
 
 	return &schema.Resource{

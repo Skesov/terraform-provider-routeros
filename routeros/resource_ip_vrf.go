@@ -22,6 +22,11 @@ func ResourceIPVrf() *schema.Resource {
 			},
 			MinItems: 1,
 		},
+		"builtin": {
+			Type:        schema.TypeBool,
+			Computed:    true,
+			Description: "",
+		},
 	}
 	return &schema.Resource{
 		CreateContext: DefaultCreate(resSchema),

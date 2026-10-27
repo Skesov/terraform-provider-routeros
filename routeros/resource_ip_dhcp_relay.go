@@ -52,6 +52,12 @@ func ResourceDhcpRelay() *schema.Resource {
 				"82 consist of: interface from which packets was received + client mac address or relay-info-remote-id",
 			DiffSuppressFunc: AlwaysPresentNotUserProvided,
 		},
+		"local_address_as_src_ip": {
+			Type:             schema.TypeBool,
+			Optional:         true,
+			Description:      "",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
 	}
 	return &schema.Resource{
 		CreateContext: DefaultCreate(resSchema),

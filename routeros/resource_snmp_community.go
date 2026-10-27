@@ -97,6 +97,12 @@ func ResourceSNMPCommunity() *schema.Resource {
 			Optional:    true,
 			Description: "Whether write access is enabled for this community.",
 		},
+		"denied_oids": {
+			Type:             schema.TypeString,
+			Optional:         true,
+			Description:      "",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
 	}
 
 	return &schema.Resource{

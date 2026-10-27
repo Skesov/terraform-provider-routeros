@@ -50,6 +50,30 @@ func ResourceRoutingIgmpProxyInterface() *schema.Resource {
 				"tree. An IGMP forwarding router must have exactly one upstream interface configured. The upstream interface " +
 				"is used to send out IGMP membership requests.",
 		},
+		"last_member_query_interval": {
+			Type:             schema.TypeString,
+			Optional:         true,
+			Description:      "",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
+		"query_interval": {
+			Type:             schema.TypeString,
+			Optional:         true,
+			Description:      "",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
+		"query_response_interval": {
+			Type:             schema.TypeString,
+			Optional:         true,
+			Description:      "",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
+		"robustness": {
+			Type:             schema.TypeInt,
+			Optional:         true,
+			Description:      "",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
 	}
 
 	return &schema.Resource{

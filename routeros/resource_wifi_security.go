@@ -237,6 +237,12 @@ func ResourceWifiSecurity() *schema.Resource {
 			Description:  "An option to enable WPS (Wi-Fi Protected Setup).",
 			ValidateFunc: validation.StringInSlice([]string{"disable", "push-button"}, false),
 		},
+		"beacon_protection": {
+			Type:             schema.TypeString,
+			Optional:         true,
+			Description:      "Possible values: `disabled`, `enabled`.",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
 	}
 
 	return &schema.Resource{

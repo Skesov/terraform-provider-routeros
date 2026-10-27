@@ -164,6 +164,19 @@ func ResourceSystemLoggingAction() *schema.Resource {
 			DiffSuppressFunc: AlwaysPresentNotUserProvided,
 		},
 		KeyVrf: PropVrfRw,
+		"check_certificate": {
+			Type:             schema.TypeBool,
+			Optional:         true,
+			Description:      "",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
+		KeyComment: PropCommentRw,
+		"email_cc": {
+			Type:             schema.TypeString,
+			Optional:         true,
+			Description:      "",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
 	}
 
 	resCreate := func(ctx context.Context, d *schema.ResourceData, m interface{}) diag.Diagnostics {

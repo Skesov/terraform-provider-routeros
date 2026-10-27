@@ -105,6 +105,12 @@ func ResourceIpHotspotUser() *schema.Resource {
 			Description:      "HotSpot server's name to which user is allowed login.",
 			DiffSuppressFunc: AlwaysPresentNotUserProvided,
 		},
+		"otp_secret": {
+			Type:             schema.TypeString,
+			Optional:         true,
+			Description:      "",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
 	}
 
 	return &schema.Resource{

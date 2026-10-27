@@ -54,6 +54,7 @@ func ResourceIpv6Pool() *schema.Resource {
 			Description:  "The option represents the prefix size that will be given out to the client.",
 			ValidateFunc: validation.IntBetween(1, 128),
 		},
+		KeyComment: PropCommentRw,
 	}
 
 	return &schema.Resource{

@@ -127,6 +127,7 @@ func ResourceIpTrafficFlowIpfix() *schema.Resource {
 		"ip_total_lenght": {
 			Type:             schema.TypeString,
 			Optional:         true,
+			Deprecated:       "RouterOS has no `ip-total-lenght`; use `ip_total_length`.",
 			Description:      "Length of the IP packet in bytes.",
 			DiffSuppressFunc: AlwaysPresentNotUserProvided,
 		},
@@ -265,6 +266,12 @@ func ResourceIpTrafficFlowIpfix() *schema.Resource {
 			Type:             schema.TypeString,
 			Optional:         true,
 			Description:      "Length of the UDP payload.",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
+		"ip_total_length": {
+			Type:             schema.TypeBool,
+			Optional:         true,
+			Description:      "Length of the IP packet in bytes.",
 			DiffSuppressFunc: AlwaysPresentNotUserProvided,
 		},
 	}

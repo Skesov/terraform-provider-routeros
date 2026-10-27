@@ -171,6 +171,24 @@ func ResourceSystemRouterboardSettings() *schema.Resource {
 			Description:      "An option to turn off output on the serial console and beeping sounds during booting.",
 			DiffSuppressFunc: AlwaysPresentNotUserProvided,
 		},
+		"etherboot_port": {
+			Type:             schema.TypeString,
+			Optional:         true,
+			Description:      "",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
+		"gpio_function": {
+			Type:             schema.TypeString,
+			Optional:         true,
+			Description:      "",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
+		"preferred_architecture": {
+			Type:             schema.TypeString,
+			Optional:         true,
+			Description:      "Possible values: `arm32`, `arm64`.",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
 	}
 
 	return &schema.Resource{

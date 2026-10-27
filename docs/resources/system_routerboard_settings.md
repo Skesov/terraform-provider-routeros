@@ -25,12 +25,15 @@ resource "routeros_system_routerboard_settings" "settings" {
 - `disable_pci` (Boolean) Specific setting for devices with the MT7621 chip. Allows disabling PCI.
 - `enable_jumper_reset` (Boolean) An option to enable reset via the onboard jumper.
 - `enter_setup_on` (String) An option to set which key will cause the BIOS to enter configuration mode during boot delay. Possible values: `any-key`, `delete-key`.
+- `etherboot_port` (String)
 - `force_backup_booter` (Boolean) An option to use the backup RouterBOOT.
+- `gpio_function` (String)
 - `init_delay` (String) An option to set a delay before the USB port is initialized. Used for mPCIe modems with RB9xx series devices only.
 - `memory_data_rate` (String) An option to change the memory data rate of the device. Values depend on the model.
 - `memory_frequency` (String) An option to change the memory frequency of the device. Values depend on the model.
 - `preboot_etherboot` (String) An option to enable preboot `etherboot`, which runs before the regular boot device.
 - `preboot_etherboot_server` (String) An option to instruct `preboot-etherboot` to accept only from the specified Netinstall server.
+- `preferred_architecture` (String) Possible values: `arm32`, `arm64`.
 - `protected_routerboot` (String) An option to disable any access to the RouterBOOT configuration settings over a console cable and disables the operation of the reset button to change the boot mode (Netinstall will be disabled). Possible values: `disabled`, `enabled`.
 - `reformat_hold_button` (String) An option to enable resetting everything by pressing the button at power-on for longer than the specified time but less than `reformat_hold_button_max.`
 - `reformat_hold_button_max` (String) See `reformat_hold_button`.

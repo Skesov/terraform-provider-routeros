@@ -14,6 +14,7 @@ resource "routeros_ip_firewall_layer7_protocol" "test" {
 
 ### Optional
 
+- `comment` (String)
 - `name` (String) Descriptive name of l7 pattern used by configuration in firewall rules.
 - `regexp` (String) POSIX compliant regular expression is used to match a pattern.
 

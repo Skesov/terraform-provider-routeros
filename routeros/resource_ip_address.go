@@ -55,6 +55,18 @@ func ResourceIPAddress() *schema.Resource {
 			Description: "Whether address belongs to an interface which is a slave port to some other master interface",
 		},
 		KeyVrf: PropVrfRw,
+		"broadcast": {
+			Type:             schema.TypeString,
+			Optional:         true,
+			Description:      "Broadcast address.",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
+		"netmask": {
+			Type:             schema.TypeString,
+			Optional:         true,
+			Description:      "Network mask.",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
 	}
 	return &schema.Resource{
 		CreateContext: DefaultCreate(resSchema),

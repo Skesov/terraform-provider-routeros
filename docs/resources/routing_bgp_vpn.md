@@ -29,6 +29,7 @@ resource "routeros_routing_bgp_vpn" "test" {
 
 ### Optional
 
+- `comment` (String)
 - `disabled` (Boolean)
 - `export` (Block List, Max: 1) A group of parameters associated with the route export. (see [below for nested schema](#nestedblock--export))
 - `import` (Block List, Max: 1) A group of parameters associated with the route import. (see [below for nested schema](#nestedblock--import))

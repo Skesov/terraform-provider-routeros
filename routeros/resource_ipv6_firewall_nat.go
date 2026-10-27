@@ -341,6 +341,42 @@ func ResourceIPv6FirewallNat() *schema.Resource {
 			Optional:    true,
 			Description: "Matches packets TTL value.",
 		},
+		"connection_state": {
+			Type:             schema.TypeString,
+			Optional:         true,
+			Description:      "",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
+		"headers": {
+			Type:             schema.TypeString,
+			Optional:         true,
+			Description:      "",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
+		"hop_limit": {
+			Type:             schema.TypeString,
+			Optional:         true,
+			Description:      "Possible values: `equal`, `greater-than`, `less-than`, `not-equal`.",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
+		"per_connection_classifier": {
+			Type:             schema.TypeString,
+			Optional:         true,
+			Description:      "",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
+		"tcp_flags": {
+			Type:             schema.TypeString,
+			Optional:         true,
+			Description:      "",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
+		"tos": {
+			Type:             schema.TypeString,
+			Optional:         true,
+			Description:      "",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
 	}
 	return &schema.Resource{
 		CreateContext: DefaultCreate(resSchema),

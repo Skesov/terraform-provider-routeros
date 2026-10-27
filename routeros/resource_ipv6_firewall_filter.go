@@ -355,6 +355,18 @@ func ResourceIPv6FirewallFilter() *schema.Resource {
 			Description: "Allows matching HTTPS traffic based on TLS SNI hostname.",
 		},
 		// No TTL.
+		"connection_nat_state": {
+			Type:             schema.TypeString,
+			Optional:         true,
+			Description:      "",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
+		"tos": {
+			Type:             schema.TypeString,
+			Optional:         true,
+			Description:      "",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
 	}
 	return &schema.Resource{
 		CreateContext: DefaultCreate(resSchema),

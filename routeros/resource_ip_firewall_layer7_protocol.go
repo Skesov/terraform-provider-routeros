@@ -28,6 +28,7 @@ func ResourceIpFirewallLayer7Protocol() *schema.Resource {
 			Optional:    true,
 			Description: "POSIX compliant regular expression is used to match a pattern.",
 		},
+		KeyComment: PropCommentRw,
 	}
 
 	return &schema.Resource{

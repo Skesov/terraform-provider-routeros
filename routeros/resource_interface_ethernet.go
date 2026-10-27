@@ -290,6 +290,12 @@ func ResourceInterfaceEthernet() *schema.Resource {
 			ValidateFunc:     validation.StringInSlice([]string{"on", "off", "auto"}, false),
 			DiffSuppressFunc: AlwaysPresentNotUserProvided,
 		},
+		"arp_accept": {
+			Type:             schema.TypeBool,
+			Optional:         true,
+			Description:      "",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
 	}
 
 	return &schema.Resource{

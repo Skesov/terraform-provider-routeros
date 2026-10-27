@@ -27,6 +27,7 @@ resource "routeros_interface_ethernet_switch" "sw0" {
 - `rspan` (Boolean) Enables Remote Switch Port Analyzer (RSPAN) feature on mirror-target. Traffic marked for ingress or egress mirroring is carried over a specified remote analyzer VLAN - `rspan-egress-vlan-id` and `rspan-ingress-vlan-id`.
 - `rspan_egress_vlan_id` (Number) RSPAN egress VLAN Id.
 - `rspan_ingress_vlan_id` (Number) RSPAN ingress VLAN Id.
+- `switch_all_ports` (Boolean)
 - `switch_id` (String) Switch-chip id. Default .id = *0
 
 ### Read-Only

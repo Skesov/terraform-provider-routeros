@@ -19,11 +19,13 @@ resource "routeros_ip_dhcp_client_option" "option" {
 
 ### Optional
 
+- `comment` (String)
 - `raw_value` (String) raw_value is computed from value.
 - `value` (String) The dhcp-client option
 
 ### Read-Only
 
+- `default` (Boolean) It's the default item.
 - `id` (String) The ID of this resource.
 
 ## Import

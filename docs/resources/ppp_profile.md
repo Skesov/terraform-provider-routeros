@@ -26,6 +26,8 @@ resource "routeros_ppp_profile" "test" {
 - `bridge_learning` (String) Changes MAC learning behavior on the dynamically created bridge port: yes - enables MAC learning no - disables MAC learning default - derive this value from the interface default profile; same as yes if this is the interface default profile.
 - `bridge_path_cost` (Number) Used  path cost for the dynamically created bridge port, used by STP/RSTP to  determine the best path, used by MSTP to determine the best path between  regions. This property has no effect when a bridge protocol-mode is set to none.
 - `bridge_port_priority` (Number) Used  priority for the dynamically created bridge port, used by STP/RSTP to  determine the root port, used by MSTP to determine root port between  regions. This property has no effect when a bridge protocol-mode is set  to none.
+- `bridge_port_trusted` (Boolean)
+- `bridge_port_vid` (Number)
 - `change_tcp_mss` (String) Modifies connection MSS settings (applies only for IPv4): yes - adjust connection MSS value no - do not adjust connection MSS value default - derive this value from the interface default profile; same as no if this is the interface default profile.
 - `comment` (String)
 - `dhcpv6_lease_time` (String) Lease time can be set starting from 7.20ab202, by default time is set to 1d.

@@ -26,6 +26,7 @@ resource "routeros_ip_ipsec_peer" "test" {
 - `local_address` (String) Routers local address on which Phase 1 should be bounded to.
 - `passive` (Boolean) When a passive mode is enabled will wait for a remote peer to initiate an IKE connection. The enabled passive mode also indicates that the peer is xauth responder, and disabled passive mode - xauth initiator. When a passive mode is a disabled peer will try to establish not only phase1 but also phase2 automatically, if policies are configured or created during the phase1.
 - `port` (Number) Communication port used (when a router is an initiator) to connect to remote peer in cases if remote peer uses the non-default port.
+- `ppk_secret` (String) Static PPK secret with "static-ppk-secret" ID used when no one-time key/psk exist for this peer, ensure the key has 256 bits of entropy.
 - `profile` (String) Name of the profile template that will be used during IKE negotiation.
 - `send_initial_contact` (Boolean) Specifies whether to send `initial contact` IKE packet or wait for remote side, this packet should trigger the removal of old peer SAs for current source address. Usually, in road warrior setups clients are initiators and this parameter should be set to no. Initial contact is not sent if modecfg or xauth is enabled for ikev1.
 

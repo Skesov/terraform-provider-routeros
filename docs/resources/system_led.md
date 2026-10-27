@@ -19,7 +19,8 @@ resource "routeros_system_led" "sfp1" {
 - `disabled` (Boolean)
 - `interface` (String) An option to set the interface to which the LED is connected.
 - `leds` (List of String) An option to set the LED name.
-- `modem_signal_treshold` (Number) An option to set the signal strength threshold for the modem LED.
+- `modem_signal_threshold` (Number) An option to set the signal strength threshold for the modem LED.
+- `modem_signal_treshold` (Number, Deprecated) An option to set the signal strength threshold for the modem LED.
 - `type` (String) An option to set the LED type.
 
 ### Read-Only

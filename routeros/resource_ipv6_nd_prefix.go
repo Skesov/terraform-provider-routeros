@@ -45,6 +45,7 @@ func ResourceIpv6NdPrefix() *schema.Resource {
 		KeyComment: PropCommentRw,
 		"dhcp6_pd_preferred": {
 			Type:        schema.TypeBool,
+			Optional:    true,
 			Computed:    true,
 			Description: "Whether the prefix is currently preferred for DHCPv6 PD. Available in RouterOS starting from version 7.22.",
 		},

@@ -139,6 +139,7 @@ func ResourceIpIpsecPolicy() *schema.Resource {
 			Description:      "Specifies whether to use tunnel mode.",
 			DiffSuppressFunc: AlwaysPresentNotUserProvided,
 		},
+		KeyDefault: PropDefaultRo,
 	}
 
 	return &schema.Resource{

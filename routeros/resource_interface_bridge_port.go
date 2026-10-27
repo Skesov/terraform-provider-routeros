@@ -443,6 +443,12 @@ func ResourceInterfaceBridgePort() *schema.Resource {
 			Description:      "When enabled, bridge floods unknown unicast traffic to all bridge egress ports.",
 			DiffSuppressFunc: AlwaysPresentNotUserProvided,
 		},
+		"trusted_arp": {
+			Type:             schema.TypeBool,
+			Optional:         true,
+			Description:      "",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
 	}
 
 	return &schema.Resource{

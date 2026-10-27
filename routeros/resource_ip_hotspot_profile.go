@@ -226,6 +226,13 @@ func ResourceIpHotspotProfile() *schema.Resource {
 			Optional:    true,
 			Description: "Use RADIUS to authenticate HotSpot users.",
 		},
+		"install_hotspot_queue": {
+			Type:             schema.TypeBool,
+			Optional:         true,
+			Description:      "",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
+		KeyDefault: PropDefaultRo,
 	}
 
 	return &schema.Resource{

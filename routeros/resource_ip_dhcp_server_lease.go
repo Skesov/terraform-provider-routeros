@@ -49,12 +49,14 @@ func ResourceDhcpServerLease() *schema.Resource {
 		},
 		"agent_circuit_id": {
 			Type:     schema.TypeString,
+			Optional: true,
 			Computed: true,
 			Description: "Circuit ID of DHCP relay agent. If each character should be valid ASCII text symbol or else " +
 				"this value is displayed as hex dump.",
 		},
 		"agent_remote_id": {
 			Type:        schema.TypeString,
+			Optional:    true,
 			Computed:    true,
 			Description: "Remote ID, set by DHCP relay agent.",
 		},
@@ -171,6 +173,29 @@ func ResourceDhcpServerLease() *schema.Resource {
 			Optional: true,
 			Description: "When this option is set server uses source MAC address instead of received CHADDR to " +
 				"assign address.",
+		},
+		"parent_queue": {
+			Type:             schema.TypeString,
+			Optional:         true,
+			Description:      "",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
+		"queue_type": {
+			Type:             schema.TypeString,
+			Optional:         true,
+			Description:      "",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
+		"routes": {
+			Type:             schema.TypeString,
+			Optional:         true,
+			Description:      "Routes that appear on the server when the client is connected.",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
+		"age": {
+			Type:        schema.TypeString,
+			Computed:    true,
+			Description: "",
 		},
 	}
 	return &schema.Resource{

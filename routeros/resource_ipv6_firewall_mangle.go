@@ -400,6 +400,66 @@ func ResourceIPv6FirewallMangle() *schema.Resource {
 			Optional:    true,
 			Description: "Matches packets TTL value.",
 		},
+		"dst_prefix": {
+			Type:             schema.TypeString,
+			Optional:         true,
+			Description:      "",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
+		"headers": {
+			Type:             schema.TypeString,
+			Optional:         true,
+			Description:      "",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
+		"hop_limit": {
+			Type:             schema.TypeString,
+			Optional:         true,
+			Description:      "Possible values: `equal`, `greater-than`, `less-than`, `not-equal`.",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
+		"jump_target": {
+			Type:             schema.TypeString,
+			Optional:         true,
+			Description:      "",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
+		"new_hop_limit": {
+			Type:             schema.TypeString,
+			Optional:         true,
+			Description:      "Possible values: `decrement`, `increment`, `set`.",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
+		"sniff_id": {
+			Type:             schema.TypeInt,
+			Optional:         true,
+			Description:      "",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
+		"sniff_target": {
+			Type:             schema.TypeString,
+			Optional:         true,
+			Description:      "",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
+		"sniff_target_port": {
+			Type:             schema.TypeInt,
+			Optional:         true,
+			Description:      "",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
+		"src_prefix": {
+			Type:             schema.TypeString,
+			Optional:         true,
+			Description:      "",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
+		"tos": {
+			Type:             schema.TypeString,
+			Optional:         true,
+			Description:      "",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
 	}
 	return &schema.Resource{
 		CreateContext: DefaultCreate(resSchema),

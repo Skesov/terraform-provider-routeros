@@ -54,6 +54,7 @@ func ResourceWifiInterworking() *schema.Resource {
 		"3gpp_raw": {
 			Type:        schema.TypeString,
 			Optional:    true,
+			Deprecated:  "RouterOS 7.25 has no `3gpp-raw`; use `3gpp_info_raw`.",
 			Description: "Cellular network advertisement information - country and network codes.",
 		},
 		"asra": {
@@ -214,6 +215,12 @@ func ResourceWifiInterworking() *schema.Resource {
 			Optional:     true,
 			Description:  "The uplink load of the WAN connection measured over `wan_measurement_duration`.",
 			ValidateFunc: validation.IntBetween(0, 255),
+		},
+		"3gpp_info_raw": {
+			Type:             schema.TypeString,
+			Optional:         true,
+			Description:      "Cellular network advertisement information as a raw hex string.",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
 		},
 	}
 

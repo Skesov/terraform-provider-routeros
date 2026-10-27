@@ -386,6 +386,24 @@ func ResourceIPFirewallFilter() *schema.Resource {
 			Optional:    true,
 			Description: "Matches packets TTL value.",
 		},
+		"p2p": {
+			Type:             schema.TypeString,
+			Optional:         true,
+			Description:      "P2P program to match.",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
+		"realm": {
+			Type:             schema.TypeString,
+			Optional:         true,
+			Description:      "",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
+		"tos": {
+			Type:             schema.TypeString,
+			Optional:         true,
+			Description:      "Specifies a match to the value of Type of Service (ToS) field of IP header.",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
 	}
 	return &schema.Resource{
 		CreateContext: DefaultCreate(resSchema),

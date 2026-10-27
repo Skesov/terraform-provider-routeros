@@ -37,6 +37,7 @@ func ResourceToolGraphingInterface() *schema.Resource {
 			Description:      "Defines whether to store collected information on system drive.",
 			DiffSuppressFunc: AlwaysPresentNotUserProvided,
 		},
+		KeyComment: PropCommentRw,
 	}
 
 	return &schema.Resource{
@@ -96,6 +97,7 @@ func ResourceToolGraphingQueue() *schema.Resource {
 			Description:      "Defines whether to store collected information on system drive.",
 			DiffSuppressFunc: AlwaysPresentNotUserProvided,
 		},
+		KeyComment: PropCommentRw,
 	}
 
 	return &schema.Resource{
@@ -142,6 +144,7 @@ func ResourceToolGraphingResource() *schema.Resource {
 			Description:      "Defines whether to store collected information on system drive.",
 			DiffSuppressFunc: AlwaysPresentNotUserProvided,
 		},
+		KeyComment: PropCommentRw,
 	}
 
 	return &schema.Resource{

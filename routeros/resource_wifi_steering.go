@@ -40,6 +40,42 @@ func ResourceWifiSteering() *schema.Resource {
 			Optional:    true,
 			Description: "An option to enable sending 802.11v BSS transition management requests.",
 		},
+		"transition_request_count": {
+			Type:             schema.TypeString,
+			Optional:         true,
+			Description:      "Possible values: `unlimited`.",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
+		"transition_request_period": {
+			Type:             schema.TypeString,
+			Optional:         true,
+			Description:      "",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
+		"transition_threshold": {
+			Type:             schema.TypeString,
+			Optional:         true,
+			Description:      "",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
+		"transition_threshold_time": {
+			Type:             schema.TypeString,
+			Optional:         true,
+			Description:      "",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
+		"transition_time": {
+			Type:             schema.TypeString,
+			Optional:         true,
+			Description:      "",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
+		"2g_probe_delay": {
+			Type:             schema.TypeBool,
+			Optional:         true,
+			Description:      "",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
 	}
 
 	return &schema.Resource{

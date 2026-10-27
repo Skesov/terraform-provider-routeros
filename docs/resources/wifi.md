@@ -44,6 +44,8 @@ resource "routeros_wifi" "wifi1" {
 - `l2mtu` (Number) Layer2 Maximum transmission unit. [See](https://wiki.mikrotik.com/wiki/Maximum_Transmission_Unit_on_RouterBoards).
 - `mac_address` (String) MAC address (BSSID) to use for the interface.
 - `master_interface` (String) The corresponding master interface of the virtual one.
+- `mld_interface` (String)
+- `mld_name` (String)
 - `mtu` (Number) Layer3 maximum transmission unit
 - `security` (Map of String) Security inline settings.
 - `steering` (Map of String) Steering inline settings.
@@ -53,6 +55,7 @@ resource "routeros_wifi" "wifi1" {
 - `bound` (Boolean) A flag whether the interface is currently available for the WiFi manager.
 - `cap` (String) Identity of the CAP this interface is provisioned by, as reported by the WiFi manager.
 - `default_name` (String) The interface's default name.
+- `dynamic` (Boolean) Configuration item created by software, not by management interface. It is not exported, and cannot be directly modified.
 - `id` (String) The ID of this resource.
 - `inactive` (Boolean) A flag whether the interface is currently inactive.
 - `master` (Boolean) A flag whether the interface is not a virtual one.

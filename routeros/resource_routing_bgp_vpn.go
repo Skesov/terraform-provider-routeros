@@ -110,7 +110,8 @@ func ResourceRoutingBgpVpn() *schema.Resource {
 			Description: "Helps to distinguish between overlapping routes from multiple VRFs. Should be unique " +
 				"per VRF. Accepts 3 types of formats.",
 		},
-		KeyVrf: PropVrfRw,
+		KeyVrf:     PropVrfRw,
+		KeyComment: PropCommentRw,
 	}
 
 	return &schema.Resource{

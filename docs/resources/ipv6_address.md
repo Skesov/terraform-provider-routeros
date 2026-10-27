@@ -26,6 +26,7 @@ resource "routeros_ipv6_address" "ipv6_address" {
 - `disabled` (Boolean)
 - `eui_64` (Boolean) Whether to calculate EUI-64 address and use it as last 64 bits of the IPv6 address.
 - `from_pool` (String) Name of the pool from which prefix will be taken to construct IPv6 address taking last part of the address from address property.
+- `from_pool_policy` (String)
 - `no_dad` (Boolean) If set indicates that address is anycast address and Duplicate Address Detection should not be performed.
 - `vrf` (String) The VRF table this resource operates on.
 

@@ -41,6 +41,7 @@ func ResourceDnsAdlist() *schema.Resource {
 			Description:  "Used to specify the URL of an adlist.",
 			ExactlyOneOf: []string{"file", "url"},
 		},
+		KeyComment: PropCommentRw,
 	}
 
 	return &schema.Resource{

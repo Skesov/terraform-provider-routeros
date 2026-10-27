@@ -183,6 +183,36 @@ func ResourceWifiConfiguration() *schema.Resource {
 			Description:  "A limit on the transmit power (in dBm) of the interface.",
 			ValidateFunc: validation.IntBetween(0, 40),
 		},
+		"distance": {
+			Type:             schema.TypeString,
+			Optional:         true,
+			Description:      "",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
+		"hw_protection_mode": {
+			Type:             schema.TypeString,
+			Optional:         true,
+			Description:      "Possible values: `cts-to-self`, `rts-cts`.",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
+		"installation": {
+			Type:             schema.TypeString,
+			Optional:         true,
+			Description:      "Possible values: `indoor`, `outdoor`.",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
+		"max_clients": {
+			Type:             schema.TypeInt,
+			Optional:         true,
+			Description:      "",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
+		"station_roaming": {
+			Type:             schema.TypeBool,
+			Optional:         true,
+			Description:      "",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
 	}
 
 	return &schema.Resource{

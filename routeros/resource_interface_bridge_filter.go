@@ -48,6 +48,7 @@ func ResourceInterfaceBridgeFilter() *schema.Resource {
 		MetaResourcePath: PropResourcePath("/interface/bridge/filter"),
 		MetaId:           PropId(Id),
 		MetaSkipFields:   PropSkipFields("bytes", "packets", "invalid"),
+		MetaTransformSet: PropTransformSet("ieee802_3_sap: 802.3-sap", "ieee802_3_type: 802.3-type"),
 		MetaSetUnsetFields: PropSetUnsetFields("arp_dst_mac_address", "arp_gratuitous", "arp_hardware_type",
 			"arp_opcode", "arp_packet_type", "arp_src_address", "arp_src_mac_address", "dst_address", "dst_mac_address",
 			"dst_port", "in_bridge", "in_bridge_list", "in_interface", "in_interface_list", "ingress_priority",
@@ -358,6 +359,42 @@ func ResourceInterfaceBridgeFilter() *schema.Resource {
 			Optional:     true,
 			Description:  "Matches the VLAN identifier field.",
 			ValidateFunc: validation.IntBetween(0, 7),
+		},
+		"ieee802_3_sap": {
+			Type:             schema.TypeString,
+			Optional:         true,
+			Description:      "DSAP (Destination Service Access Point) and SSAP (Source Service Access Point) of an 802.3 frame (RouterOS `802.3-sap`).",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
+		"ieee802_3_type": {
+			Type:             schema.TypeString,
+			Optional:         true,
+			Description:      "Ethernet protocol type of an 802.3 SNAP frame (RouterOS `802.3-type`).",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
+		"arp_dst_address": {
+			Type:             schema.TypeString,
+			Optional:         true,
+			Description:      "ARP destination address.",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
+		"dst_address6": {
+			Type:             schema.TypeString,
+			Optional:         true,
+			Description:      "",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
+		"src_address6": {
+			Type:             schema.TypeString,
+			Optional:         true,
+			Description:      "",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
+		"stp_msg_age": {
+			Type:             schema.TypeString,
+			Optional:         true,
+			Description:      "STP message age.",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
 		},
 	}
 	return &schema.Resource{

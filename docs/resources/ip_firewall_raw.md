@@ -63,6 +63,7 @@
 - `tcp_mss` (String) Matches TCP MSS value of an IP packet.
 - `time` (String) Allows to create a filter based on the packets' arrival time and date or, for locally generated packets, departure time and date.
 - `tls_host` (String) Allows matching HTTPS traffic based on TLS SNI hostname.
+- `tos` (String)
 - `ttl` (String) Matches packets TTL value.
 
 ### Read-Only

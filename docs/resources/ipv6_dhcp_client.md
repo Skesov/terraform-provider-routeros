@@ -36,6 +36,7 @@ resource "routeros_ipv6_dhcp_client" "client" {
 - `allow_reconfigure` (Boolean) Allow reconfigure messages.
 - `check_gateway` (String) Method on how to check gateway reachability.
 - `comment` (String)
+- `custom_duid` (String) Used as client DUID, overrides use-interface-duid.
 - `custom_iana_id` (String) Allow to specify custom IANA ID.
 - `custom_iapd_id` (String) Allow to specify custom IAPD ID.
 - `default_route_distance` (Number) Distance of default route. Applicable if add-default-route is set to yes.

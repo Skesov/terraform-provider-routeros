@@ -42,6 +42,18 @@ func ResourceInterfaceVlan() *schema.Resource {
 			Optional: true,
 		},
 		KeyVlanId: PropVlanIdRw("Virtual LAN identifier or tag that is used to distinguish VLANs. Must be equal for all computers that belong to the same VLAN.", false),
+		"arp_accept": {
+			Type:             schema.TypeBool,
+			Optional:         true,
+			Description:      "",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
+		"forced_mac_address": {
+			Type:             schema.TypeString,
+			Optional:         true,
+			Description:      "",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
 	}
 
 	return &schema.Resource{

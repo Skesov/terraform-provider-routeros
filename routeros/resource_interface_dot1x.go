@@ -157,6 +157,12 @@ func ResourceInterfaceDot1xServer() *schema.Resource {
 			Description:  "Assigned VLAN when RADIUS server is not responding and request timed out.",
 			ValidateFunc: validation.IntBetween(1, 4094),
 		},
+		"reauth_period": {
+			Type:             schema.TypeString,
+			Optional:         true,
+			Description:      "",
+			DiffSuppressFunc: AlwaysPresentNotUserProvided,
+		},
 	}
 
 	return &schema.Resource{
