@@ -36,7 +36,7 @@ Conflict resolutions are recorded in the merge commits for #1009 and #1027.
 - `routeros_ip_service`: set the static row by `.id`, fill `numbers` on read so imported services plan clean.
 - `routeros_ip_service_webserver`: new singleton for `/ip/service/webserver`.
 
-### RouterOS 7.25 coverage (1.99.2-skesov.3)
+### RouterOS 7.25 coverage (1.99.2-skesov.4)
 
 [`tools/ros-coverage`](tools/ros-coverage/README.md) dumps the menu tree of a
 live router and compares it with the schema. The dumps of a hAP ax² and a hAP
@@ -82,14 +82,14 @@ The binary is installed into a Terraform filesystem mirror under a prerelease
 version above the last upstream release, so it never collides with one:
 
 ```sh
-V=1.99.2-skesov.3
+V=1.99.2-skesov.4
 OS_ARCH=$(go env GOOS)_$(go env GOARCH)
 D=~/.terraform.d/plugins/registry.terraform.io/terraform-routeros/routeros/$V/$OS_ARCH
 mkdir -p "$D"
 CGO_ENABLED=0 go build -trimpath -o "$D/terraform-provider-routeros_v$V" .
 ```
 
-Pin `version = "1.99.2-skesov.3"` in `required_providers` and run
+Pin `version = "1.99.2-skesov.4"` in `required_providers` and run
 `terraform init -upgrade`. Without a `provider_installation` block Terraform
 reads `~/.terraform.d/plugins` as an implicit local mirror.
 
