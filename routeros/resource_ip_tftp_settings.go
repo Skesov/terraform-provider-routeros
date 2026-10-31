@@ -30,7 +30,7 @@ func ResourceIpTFTPSettings() *schema.Resource {
 		UpdateContext: DefaultSystemUpdate(resSchema),
 		DeleteContext: DefaultSystemDelete(resSchema),
 		Importer: &schema.ResourceImporter{
-			StateContext: ImportStateCustomContext(resSchema),
+			StateContext: schema.ImportStatePassthroughContext,
 		},
 
 		Schema: resSchema,
